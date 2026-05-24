@@ -74,7 +74,7 @@ export default function FoodResults() {
 
         {filteredRestaurants.length === 0 ? (
           <div className="bg-white rounded-lg p-8 text-center">
-            <p className="text-gray-500">未找到 '{location}' 相关美食</p>
+            <p className="text-gray-500">未找到 {location} 相关美食</p>
             <p className="text-sm text-gray-400 mt-2">
               试试搜索: 螺蛳粉、青云、夜市
             </p>
