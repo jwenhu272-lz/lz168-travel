@@ -1,0 +1,57 @@
+[
+  {
+    "id": "fl1",
+    "origin": "Liuzhou",
+    "destination": "Beijing",
+    "departureDate": "2026-06-15",
+    "price": 680,
+    "airline": "China Southern",
+    "flightNumber": "CZ3162",
+    "duration": "3h 10m",
+    "currency": "CNY"
+  },
+  {
+    "id": "fl2",
+    "origin": "Liuzhou",
+    "destination": "Shanghai",
+    "departureDate": "2026-06-15",
+    "price": 590,
+    "airline": "China Eastern",
+    "flightNumber": "MU5204",
+    "duration": "2h 45m",
+    "currency": "CNY"
+  },
+  {
+    "id": "fl3",
+    "origin": "Liuzhou",
+    "destination": "Guangzhou",
+    "departureDate": "2026-06-15",
+    "price": 420,
+    "airline": "China Southern",
+    "flightNumber": "CZ3728",
+    "duration": "1h 30m",
+    "currency": "CNY"
+  },
+  {
+    "id": "fl4",
+    "origin": "Liuzhou",
+    "destination": "Shenzhen",
+    "departureDate": "2026-06-15",
+    "price": 450,
+    "airline": "Shenzhen Air",
+    "flightNumber": "ZH9342",
+    "duration": "1h 35m",
+    "currency": "CNY"
+  },
+  {
+    "id": "fl5",
+    "origin": "Liuzhou",
+    "destination": "Chengdu",
+    "departureDate": "2026-06-15",
+    "price": 510,
+    "airline": "Sichuan Air",
+    "flightNumber": "3U8772",
+    "duration": "1h 50m",
+    "currency": "CNY"
+  }
+]

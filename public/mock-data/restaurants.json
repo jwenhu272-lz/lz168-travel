@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fb1",
+    "name": "青云螺蛳粉",
+    "cuisine": "柳州螺蛳粉",
+    "priceRange": "¥20-50",
+    "rating": 4.9,
+    "location": "青云景区内",
+    "partners": true
+  },
+  {
+    "id": "fb2",
+    "name": "老街米粉店",
+    "cuisine": "本地米粉",
+    "priceRange": "¥15-35",
+    "rating": 4.7,
+    "location": "青云附近",
+    "partners": true
+  },
+  {
+    "id": "fb3",
+    "name": "柳州夜市烧烤",
+    "cuisine": "街头小吃",
+    "priceRange": "¥30-80",
+    "rating": 4.5,
+    "location": "步行街",
+    "partners": true
+  }
+]

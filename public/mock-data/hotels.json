@@ -1,0 +1,29 @@
+[
+  {
+    "id": "hot1",
+    "name": "Liuzhou Marriott Hotel",
+    "location": "Chengnan District",
+    "pricePerNight": 488,
+    "rating": 4.6,
+    "distanceToQingyun": "2.5 km",
+    "currency": "CNY"
+  },
+  {
+    "id": "hot2",
+    "name": "Qingyun Boutique Hotel",
+    "location": "Qingyun Scenic Area",
+    "pricePerNight": 328,
+    "rating": 4.8,
+    "distanceToQingyun": "Inside the area",
+    "currency": "CNY"
+  },
+  {
+    "id": "hot3",
+    "name": "Hampton by Hilton Liuzhou",
+    "location": "Wanda Plaza",
+    "pricePerNight": 298,
+    "rating": 4.4,
+    "distanceToQingyun": "3.8 km",
+    "currency": "CNY"
+  }
+]

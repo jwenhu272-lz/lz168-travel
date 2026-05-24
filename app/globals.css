@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Trip.com Style - Correct Blue (#0052CC) */
+:root {
+  --primary: #0052cc;
+  --primary-dark: #0044aa;
+  --primary-light: #1a6bff;
+  --secondary: #f5a623;
+  --accent: #00a86b;
+  --gray-bg: #f7f7f7;
+}
+
+body {
+  background-color: #f7f7f7 !important;
+}
+
+/* Force correct blue */
+.bg-trip-primary {
+  background-color: #0052cc !important;
+}
+.bg-trip-primary:hover {
+  background-color: #0044aa !important;
+}
+
+.text-trip-primary {
+  color: #0052cc !important;
+}
+
+.border-trip-primary {
+  border-color: #0052cc !important;
+}
+
+.bg-trip-promo {
+  background: linear-gradient(135deg, #0052cc 0%, #1a6bff 100%) !important;
+}
+/* Toast Animation for Food Page */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+/* Hide scrollbar for categories on mobile */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

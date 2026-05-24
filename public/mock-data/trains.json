@@ -1,0 +1,86 @@
+[
+  {
+    "id": "tr1",
+    "origin": "Liuzhou",
+    "destination": "Guilin",
+    "departureTime": "08:30",
+    "arrivalTime": "09:45",
+    "duration": "1h 15m",
+    "price": 95,
+    "trainNumber": "D1780",
+    "class": "Second Class",
+    "currency": "CNY"
+  },
+  {
+    "id": "tr2",
+    "origin": "Liuzhou",
+    "destination": "Nanning",
+    "departureTime": "10:15",
+    "arrivalTime": "11:55",
+    "duration": "1h 40m",
+    "price": 110,
+    "trainNumber": "D3562",
+    "class": "Second Class",
+    "currency": "CNY"
+  },
+  {
+    "id": "tr3",
+    "origin": "Liuzhou",
+    "destination": "Guangzhou",
+    "departureTime": "09:00",
+    "arrivalTime": "13:30",
+    "duration": "4h 30m",
+    "price": 245,
+    "trainNumber": "G2928",
+    "class": "Second Class",
+    "currency": "CNY"
+  },
+  {
+    "id": "tr4",
+    "origin": "Liuzhou",
+    "destination": "Shenzhen",
+    "departureTime": "07:45",
+    "arrivalTime": "12:15",
+    "duration": "4h 30m",
+    "price": 268,
+    "trainNumber": "G2912",
+    "class": "Second Class",
+    "currency": "CNY"
+  },
+  {
+    "id": "tr5",
+    "origin": "Liuzhou",
+    "destination": "Chongqing",
+    "departureTime": "14:20",
+    "arrivalTime": "19:50",
+    "duration": "5h 30m",
+    "price": 320,
+    "trainNumber": "D1794",
+    "class": "Second Class",
+    "currency": "CNY"
+  },
+  {
+    "id": "tr6",
+    "origin": "Liuzhou",
+    "destination": "Beijing",
+    "departureTime": "08:00",
+    "arrivalTime": "20:30",
+    "duration": "12h 30m",
+    "price": 580,
+    "trainNumber": "G422",
+    "class": "Second Class",
+    "currency": "CNY"
+  },
+  {
+    "id": "tr7",
+    "origin": "Liuzhou",
+    "destination": "Shanghai",
+    "departureTime": "09:30",
+    "arrivalTime": "21:00",
+    "duration": "11h 30m",
+    "price": 520,
+    "trainNumber": "G1502",
+    "class": "Second Class",
+    "currency": "CNY"
+  }
+]
