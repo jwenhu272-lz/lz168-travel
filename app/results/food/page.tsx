@@ -2,10 +2,12 @@
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import BottomNav from '@/components/BottomNav';
 
 export default function FoodResults() {
   const searchParams = useSearchParams();
   const location = searchParams.get('location');
+  const [language, setLanguage] = useState('中文');
 
   const [restaurantsData, setRestaurantsData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -59,7 +61,7 @@ export default function FoodResults() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 p-8">
+    <main className="min-h-screen bg-gray-100 p-8 pb-24">
       <div className="max-w-4xl mx-auto">
         <Link href="/" className="text-orange-600 mb-4 inline-block">
           ← 新搜索
@@ -120,9 +122,7 @@ export default function FoodResults() {
           </div>
         )}
       </div>
-      {/* Bottom Navigation */}
       <BottomNav language={language} />
     </main>
   );
 }
-import BottomNav from '@/components/BottomNav';
