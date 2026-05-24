@@ -2,20 +2,33 @@
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import BottomNav from '@/components/BottomNav';
 
 export default function HotelResults() {
   const searchParams = useSearchParams();
   const destination = searchParams.get('destination');
   const date = searchParams.get('date');
+  const [language, setLanguage] = useState('中文');
 
   const [hotelsData, setHotelsData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch('/mock-data/hotels.json')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Failed to load');
+        }
+        return res.json();
+      })
       .then((data) => {
         setHotelsData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error loading hotels:', err);
+        setError(true);
         setLoading(false);
       });
   }, []);
@@ -35,8 +48,21 @@ export default function HotelResults() {
     );
   }
 
+  if (error) {
+    return (
+      <main className="min-h-screen bg-gray-100 p-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-red-500">加载酒店数据失败</p>
+          <Link href="/" className="text-orange-600 mt-4 inline-block">
+            ← 返回首页
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-gray-100 p-8">
+    <main className="min-h-screen bg-gray-100 p-8 pb-24">
       <div className="max-w-4xl mx-auto">
         <Link href="/" className="text-orange-600 mb-4 inline-block">
           ← 新搜索
@@ -89,6 +115,7 @@ export default function HotelResults() {
           </div>
         )}
       </div>
+      <BottomNav language={language} />
     </main>
   );
 }
