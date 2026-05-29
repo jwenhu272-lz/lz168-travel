@@ -20,14 +20,14 @@ export default function Home() {
 
   // Community Posts
   const communityPosts = [
-    { id: 1, username: "柳州美食家", usernameEn: "Liuzhou Foodie", avatar: "🍜", image: "https://picsum.photos/id/108/400/300", title: "青云螺蛳粉探店！正宗柳州味", titleEn: "Qingyun Luosifen Review!", likes: 1289, comments: 89, saves: 345 },
-    { id: 2, username: "旅游达人小周", usernameEn: "Travel Expert", avatar: "✈️", image: "https://picsum.photos/id/104/400/300", title: "青云景区最美打卡点推荐", titleEn: "Best Photo Spots", likes: 2345, comments: 156, saves: 678 },
-    { id: 3, username: "青云商户管家", usernameEn: "Qingyun Merchant", avatar: "🏨", image: "https://picsum.photos/id/106/400/300", title: "青云精品酒店限时特惠！", titleEn: "Hotel Limited Offer!", likes: 567, comments: 34, saves: 123 },
-    { id: 4, username: "柳州摄影狮", usernameEn: "Liuzhou Photographer", avatar: "📷", image: "https://picsum.photos/id/15/400/300", title: "青云夜景绝美拍摄攻略", titleEn: "Night Photography Guide", likes: 3421, comments: 278, saves: 901 },
-    { id: 5, username: "螺蛳粉公主", usernameEn: "Luosifen Princess", avatar: "👸", image: "https://picsum.photos/id/127/400/300", title: "柳州夜市必吃清单🔥", titleEn: "Night Market Must-Eat🔥", likes: 1876, comments: 145, saves: 432 },
-    { id: 6, username: "青云官方", usernameEn: "Qingyun Official", avatar: "🎫", image: "https://picsum.photos/id/96/400/300", title: "青云景区新活动来啦！", titleEn: "New Events at Qingyun!", likes: 987, comments: 56, saves: 234 },
-    { id: 7, username: "自驾游阿强", usernameEn: "Road Trip A Qiang", avatar: "🚗", image: "https://picsum.photos/id/111/400/300", title: "柳州周边自驾游路线推荐", titleEn: "Road Trip Routes", likes: 654, comments: 43, saves: 187 },
-    { id: 8, username: "美食探店小分队", usernameEn: "Food Explorer", avatar: "🍲", image: "https://picsum.photos/id/124/400/300", title: "青云早茶文化体验", titleEn: "Morning Tea Experience", likes: 2341, comments: 167, saves: 543 },
+    { id: 1, username: "柳州美食家", usernameEn: "Liuzhou Foodie", avatar: "🍜", image: "https://i.imgur.com/2ZsKVrr.jpeg", title: "青云螺蛳粉探店！正宗柳州味", titleEn: "Qingyun Luosifen Review!", likes: 1289, comments: 89, saves: 345 },
+    { id: 2, username: "旅游达人小周", usernameEn: "Travel Expert", avatar: "✈️", image: "https://i.imgur.com/aPGiMDW.jpeg", title: "青云景区最美打卡点推荐", titleEn: "Best Photo Spots", likes: 2345, comments: 156, saves: 678 },
+    { id: 3, username: "青云商户管家", usernameEn: "Qingyun Merchant", avatar: "🏨", image: "https://i.imgur.com/n81nuup.jpeg", title: "青云精品酒店限时特惠！", titleEn: "Hotel Limited Offer!", likes: 567, comments: 34, saves: 123 },
+    { id: 4, username: "柳州摄影狮", usernameEn: "Liuzhou Photographer", avatar: "📷", image: "https://i.imgur.com/7t5Kbon.jpeg", title: "青云夜景绝美拍摄攻略", titleEn: "Night Photography Guide", likes: 3421, comments: 278, saves: 901 },
+    { id: 5, username: "螺蛳粉公主", usernameEn: "Luosifen Princess", avatar: "👸", image: "https://i.imgur.com/n2G9MxQ.jpeg", title: "柳州夜市必吃清单🔥", titleEn: "Night Market Must-Eat🔥", likes: 1876, comments: 145, saves: 432 },
+    { id: 6, username: "青云官方", usernameEn: "Qingyun Official", avatar: "🎫", image: "https://i.imgur.com/RJCokjp.jpeg", title: "青云景区新活动来啦！", titleEn: "New Events at Qingyun!", likes: 987, comments: 56, saves: 234 },
+    { id: 7, username: "自驾游阿强", usernameEn: "Road Trip A Qiang", avatar: "🚗", image: "https://i.imgur.com/OTLyVMr.jpeg", title: "柳州周边自驾游路线推荐", titleEn: "Road Trip Routes", likes: 654, comments: 43, saves: 187 },
+    { id: 8, username: "美食探店小分队", usernameEn: "Food Explorer", avatar: "🍲", image: "https://i.imgur.com/tGPXcMx.jpeg", title: "青云早茶文化体验", titleEn: "Morning Tea Experience", likes: 2341, comments: 167, saves: 543 },
   ];
 
   const filteredPosts = communityPosts.filter(post => {
@@ -82,28 +82,30 @@ export default function Home() {
   return (
     <main style={{ minHeight: "100vh", backgroundColor: "#f3f4f6", paddingBottom: "80px" }}>
       
-      {/* Header with Logo - FIXED LEFT ALIGNMENT */}
-      <header style={{ backgroundColor: "white", borderBottom: "1px solid #ddd", position: "sticky", top: 0, zIndex: 50 }}>
+      {/* Header with Logo - BIGGER LOGO */}
+      <header style={{ backgroundColor: "white", borderBottom: "1px solid #e5e7eb", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "12px 20px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
-            {/* Logo Section - STRICTLY LEFT ALIGNED */}
-            <div style={{ flex: "0 0 auto", textAlign: "left" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
+            {/* Logo - BIGGER size (110px) */}
+            <div style={{ flexShrink: 0 }}>
               <img 
-                src="https://res.cloudinary.com/dvtedtwql/image/upload/v1780021690/Photoroom_20260527_002033_mn2pa7.png" 
+                src="https://i.postimg.cc/Gpdh7wrS/Photoroom-20260530-010622.png" 
                 alt="Lz168.com" 
                 style={{ 
-                  height: "130px", 
+                  height: "110px", 
                   width: "auto", 
-                  display: "block",
-                  margin: "0",
-                  padding: "0",
-                  objectFit: "contain"
+                  display: "block"
                 }}
               />
             </div>
             
-            {/* Icons Section - STRICTLY RIGHT ALIGNED */}
-            <div style={{ display: "flex", gap: "20px", color: "#6b7280", flex: "0 0 auto" }}>
+            {/* Icons - Top Right - NO BORDER (original style) */}
+            <div style={{ 
+              display: "flex", 
+              gap: "20px", 
+              color: "#6b7280", 
+              flexShrink: 0
+            }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
                 <span style={{ fontSize: "22px" }}>🔔</span>
                 <span style={{ fontSize: "12px" }}>{language === "中文" ? "消息" : "Messages"}</span>
@@ -125,12 +127,13 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 2-Row Menu */}
+      {/* 2-Row Menu - REMOVED PINK BACKGROUND, ADDED GOLD BORDER */}
       <div style={{ 
-        background: "linear-gradient(135deg, #FFD6E8 0%, #FFB8D2 25%, #FF9BBF 50%, #FFB8D2 75%, #FFD6E8 100%)",
-        borderBottom: "2px solid #FF6B9D",
+        backgroundColor: "white",
+        borderBottom: "1px solid #d4af37",
+        borderTop: "1px solid #d4af37",
         padding: "16px 0",
-        boxShadow: "0 4px 15px rgba(255, 107, 157, 0.2)"
+        boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
       }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 20px" }}>
           {/* Row 1 */}
@@ -262,11 +265,15 @@ export default function Home() {
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "32px 20px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px" }}>
           <h2 style={{ fontSize: "24px", fontWeight: "bold", color: "#1f2937" }}>{language === "中文" ? "✨ 青云社区 · 热门分享" : "✨ Qingyun Community · Popular Posts"}</h2>
-          <button style={{ color: "#0052CC", fontSize: "14px", fontWeight: "500", background: "none", border: "none", cursor: "pointer" }}>{language === "中文" ? "更多动态 →" : "More →"}</button>
+          <Link href="/community">
+            <button style={{ color: "#0052CC", fontSize: "14px", fontWeight: "500", background: "none", border: "none", cursor: "pointer" }}>
+              {language === "中文" ? "更多动态 →" : "More →"}
+            </button>
+          </Link>
         </div>
         {filteredPosts.length === 0 ? (<div style={{ textAlign: "center", padding: "40px", backgroundColor: "white", borderRadius: "12px" }}><p>{language === "中文" ? "没有找到相关帖子" : "No posts found"}</p></div>) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
-            {filteredPosts.map((post) => (
+            {filteredPosts.slice(0, 6).map((post) => (
               <Link href={`/community/${post.id}`} key={post.id} style={{ textDecoration: "none", display: "block" }}>
                 <div style={{ backgroundColor: "white", borderRadius: "12px", overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}
                   onMouseEnter={(e) => {
@@ -292,7 +299,13 @@ export default function Home() {
             ))}
           </div>
         )}
-        <div style={{ textAlign: "center", marginTop: "32px" }}><button style={{ border: "1px solid #d1d5db", backgroundColor: "white", padding: "8px 32px", borderRadius: "999px", fontSize: "14px", cursor: "pointer" }}>{language === "中文" ? "加载更多" : "Load More"}</button></div>
+        <div style={{ textAlign: "center", marginTop: "32px" }}>
+          <Link href="/community">
+            <button style={{ border: "1px solid #d1d5db", backgroundColor: "white", padding: "8px 32px", borderRadius: "999px", fontSize: "14px", cursor: "pointer" }}>
+              {language === "中文" ? "加载更多" : "Load More"}
+            </button>
+          </Link>
+        </div>
       </div>
 
       {/* Partners */}
