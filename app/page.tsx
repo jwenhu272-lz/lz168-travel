@@ -64,11 +64,11 @@ export default function Home() {
     }
   };
 
-  // Menu categories for 2-row layout
+  // Menu items
   const menuRow1 = [
     { id: "food", icon: "🍜", label: "美食", labelEn: "Food", link: "/food" },
-    { id: "luosifen", icon: "🍲", label: "螺蛳粉", labelEn: "Luosifen", link: "/food?category=luosifen" },
-    { id: "market", icon: "🏮", label: "青云夜市", labelEn: "Qingyun Market", link: "/food?category=nightmarket" },
+    { id: "luosifen", icon: "🍲", label: "螺蛳粉", labelEn: "Luosifen", link: "/food" },
+    { id: "market", icon: "🏮", label: "青云夜市", labelEn: "Qingyun Market", link: "/food" },
     { id: "secret", icon: "🔮", label: "小众秘境", labelEn: "Secret Spots", link: "/tour" },
   ];
 
@@ -82,20 +82,28 @@ export default function Home() {
   return (
     <main style={{ minHeight: "100vh", backgroundColor: "#f3f4f6", paddingBottom: "80px" }}>
       
-      {/* Header with Logo - EVEN BIGGER SIZE */}
+      {/* Header with Logo - FIXED LEFT ALIGNMENT */}
       <header style={{ backgroundColor: "white", borderBottom: "1px solid #ddd", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "12px 20px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            {/* Logo Section - EVEN BIGGER (110px) */}
-            <div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+            {/* Logo Section - STRICTLY LEFT ALIGNED */}
+            <div style={{ flex: "0 0 auto", textAlign: "left" }}>
               <img 
                 src="https://res.cloudinary.com/dvtedtwql/image/upload/v1780021690/Photoroom_20260527_002033_mn2pa7.png" 
                 alt="Lz168.com" 
-                style={{ height: "110px", width: "auto", display: "block" }}
+                style={{ 
+                  height: "130px", 
+                  width: "auto", 
+                  display: "block",
+                  margin: "0",
+                  padding: "0",
+                  objectFit: "contain"
+                }}
               />
             </div>
-            {/* Icons Section */}
-            <div style={{ display: "flex", gap: "20px", color: "#6b7280" }}>
+            
+            {/* Icons Section - STRICTLY RIGHT ALIGNED */}
+            <div style={{ display: "flex", gap: "20px", color: "#6b7280", flex: "0 0 auto" }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
                 <span style={{ fontSize: "22px" }}>🔔</span>
                 <span style={{ fontSize: "12px" }}>{language === "中文" ? "消息" : "Messages"}</span>
@@ -117,86 +125,77 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 2-Row Menu with STRIKING PINK BACKGROUND */}
+      {/* 2-Row Menu */}
       <div style={{ 
         background: "linear-gradient(135deg, #FFD6E8 0%, #FFB8D2 25%, #FF9BBF 50%, #FFB8D2 75%, #FFD6E8 100%)",
         borderBottom: "2px solid #FF6B9D",
-        padding: "20px 0",
-        boxShadow: "0 4px 15px rgba(255, 107, 157, 0.3)"
+        padding: "16px 0",
+        boxShadow: "0 4px 15px rgba(255, 107, 157, 0.2)"
       }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 20px" }}>
           {/* Row 1 */}
-          <div style={{ display: "flex", justifyContent: "space-around", marginBottom: "20px", flexWrap: "wrap", gap: "12px" }}>
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(4, 1fr)", 
+            gap: "8px",
+            marginBottom: "16px",
+            textAlign: "center"
+          }}>
             {menuRow1.map((item) => (
               <Link 
                 key={item.id}
                 href={item.link}
                 style={{ 
-                  flex: 1, 
-                  minWidth: "85px",
                   textDecoration: "none",
-                  backgroundColor: "rgba(255,255,255,0.9)",
-                  borderRadius: "24px",
-                  padding: "16px 8px",
-                  textAlign: "center",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                  backdropFilter: "blur(4px)",
+                  padding: "12px 4px",
+                  display: "block",
+                  transition: "transform 0.2s",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-4px)";
-                  e.currentTarget.style.boxShadow = "0 8px 20px rgba(255,107,157,0.3)";
-                  e.currentTarget.style.backgroundColor = "white";
+                  e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)";
-                  e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.9)";
                 }}
               >
-                <div style={{ fontSize: "36px", marginBottom: "8px" }}>{item.icon}</div>
-                <div style={{ fontSize: "14px", fontWeight: "600", color: "#C41E6B" }}>{language === "中文" ? item.label : item.labelEn}</div>
+                <div style={{ fontSize: "32px", marginBottom: "6px" }}>{item.icon}</div>
+                <div style={{ fontSize: "13px", fontWeight: "600", color: "#C41E6B" }}>{language === "中文" ? item.label : item.labelEn}</div>
               </Link>
             ))}
           </div>
           {/* Row 2 */}
-          <div style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: "12px" }}>
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(4, 1fr)", 
+            gap: "8px",
+            textAlign: "center"
+          }}>
             {menuRow2.map((item) => (
               <Link 
                 key={item.id}
                 href={item.link}
                 style={{ 
-                  flex: 1, 
-                  minWidth: "85px",
                   textDecoration: "none",
-                  backgroundColor: "rgba(255,255,255,0.9)",
-                  borderRadius: "24px",
-                  padding: "16px 8px",
-                  textAlign: "center",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                  backdropFilter: "blur(4px)",
+                  padding: "12px 4px",
+                  display: "block",
+                  transition: "transform 0.2s",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-4px)";
-                  e.currentTarget.style.boxShadow = "0 8px 20px rgba(255,107,157,0.3)";
-                  e.currentTarget.style.backgroundColor = "white";
+                  e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)";
-                  e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.9)";
                 }}
               >
-                <div style={{ fontSize: "36px", marginBottom: "8px" }}>{item.icon}</div>
-                <div style={{ fontSize: "14px", fontWeight: "600", color: "#C41E6B" }}>{language === "中文" ? item.label : item.labelEn}</div>
+                <div style={{ fontSize: "32px", marginBottom: "6px" }}>{item.icon}</div>
+                <div style={{ fontSize: "13px", fontWeight: "600", color: "#C41E6B" }}>{language === "中文" ? item.label : item.labelEn}</div>
               </Link>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Hero Carousel - 3:2 Landscape */}
+      {/* Hero Carousel */}
       <div style={{ position: "relative", width: "100%", paddingBottom: "66.67%", overflow: "hidden" }}>
         {heroSlides.map((slide, idx) => (
           <div key={slide.id} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, transition: "opacity 0.5s", opacity: currentSlide === idx ? 1 : 0 }}>
