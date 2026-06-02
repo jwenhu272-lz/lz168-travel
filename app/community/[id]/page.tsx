@@ -8,7 +8,7 @@ import BottomNav from "@/components/BottomNav";
 import Logo from "@/components/Logo";
 import AIChatbot from "@/components/AIChatbot";
 
-// All 8 community posts data
+// COMPLETE community posts data - ALL 10 POSTS
 const communityPosts = [
   { 
     id: 1, 
@@ -210,6 +210,66 @@ const communityPosts = [
     followers: 3456,
     following: 234
   },
+  // POST 9: Sakura Season
+  { 
+    id: 9, 
+    username: "柳州文旅", 
+    usernameEn: "Liuzhou Culture & Tourism", 
+    avatar: "🌸", 
+    images: [
+      "https://i.postimg.cc/fRLsb1Cg/88b7da59-78a1-4183-a24e-2f4b3e89150d.jpg",
+      "https://i.postimg.cc/jS0CJMGN/0808511a-cfbc-4517-92f5-b72bd891dc6c.jpg",
+      "https://i.postimg.cc/kGsrJytT/701d4ac2-a167-444c-94b9-a7602c36a405.jpg"
+    ],
+    title: "🌸 柳州樱花季 · 春日限定浪漫", 
+    titleEn: "🌸 Liuzhou Sakura Season · Spring Limited Romance",
+    description: "每年4-5月，柳州变身粉色海洋！青云湖畔樱花盛开，漫步花海，感受春日浪漫。最佳观赏期：4月中旬至5月初。",
+    descriptionEn: "Every April-May, Liuzhou turns into a pink ocean! Cherry blossoms bloom by Qingyun Lake, stroll through the flower sea and feel the spring romance. Best viewing: mid-April to early May.",
+    location: "青云湖畔",
+    locationEn: "Qingyun Lake",
+    tags: ["樱花季", "柳州", "春日限定"],
+    tagsEn: ["Sakura", "Liuzhou", "Spring"],
+    likes: 3421,
+    comments: 278,
+    saves: 901,
+    shares: 234,
+    timeAgo: "3天前",
+    timeAgoEn: "3 days ago",
+    userBio: "柳州文化旅游局官方账号",
+    userBioEn: "Liuzhou Culture and Tourism Official",
+    followers: 12345,
+    following: 10
+  },
+  // POST 10: Sakura Photography Tips
+  { 
+    id: 10, 
+    username: "摄影小王子", 
+    usernameEn: "Photography Prince", 
+    avatar: "📸", 
+    images: [
+      "https://i.postimg.cc/RCHPTFWS/3c3c9f44-742f-456d-a2e9-377a2fc6ae6a.jpg",
+      "https://i.postimg.cc/xdzWJQzM/6cb4d5cb-0e96-41d7-8ea9-04d8ecd083a5.jpg",
+      "https://i.postimg.cc/Kz7wf5Qx/d4d6c605-8b08-4839-8507-b1a63c003064.jpg"
+    ],
+    title: "樱花拍照秘籍｜柳州樱花季必看", 
+    titleEn: "Sakura Photography Secrets | Must-See for Liuzhou Sakura Season",
+    description: "分享6个樱花拍照姿势和最佳拍摄时间！清晨和傍晚光线最美，穿浅色衣服更出片哦～",
+    descriptionEn: "Share 6 cherry blossom photo poses and best shooting times! Morning and evening have the most beautiful light, light-colored clothes work best~",
+    location: "青云公园",
+    locationEn: "Qingyun Park",
+    tags: ["摄影技巧", "樱花", "拍照圣地"],
+    tagsEn: ["Photography", "Sakura", "Photo Spot"],
+    likes: 2856,
+    comments: 189,
+    saves: 567,
+    shares: 98,
+    timeAgo: "2天前",
+    timeAgoEn: "2 days ago",
+    userBio: "独立摄影师 | 分享摄影心得",
+    userBioEn: "Independent photographer | Sharing photography tips",
+    followers: 5678,
+    following: 234
+  },
 ];
 
 function CommunityDetailPage() {
@@ -230,6 +290,7 @@ function CommunityDetailPage() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [imageErrors, setImageErrors] = useState({});
+  const [gridColumns, setGridColumns] = useState(2);
 
   const post = communityPosts.find(p => p.id === postId);
 
@@ -243,6 +304,11 @@ function CommunityDetailPage() {
         { id: 3, username: "柳州土著", avatar: "🏠", content: "这家确实不错", contentEn: "This place is really good", timeAgo: "3小时前", likes: 5 },
       ];
       setComments(mockComments);
+      
+      const savedGridPreference = localStorage.getItem("related_posts_grid_layout");
+      if (savedGridPreference) {
+        setGridColumns(parseInt(savedGridPreference));
+      }
     }
     const savedPosts = JSON.parse(localStorage.getItem("saved_posts") || "[]");
     setIsSaved(savedPosts.includes(postId));
@@ -253,7 +319,7 @@ function CommunityDetailPage() {
       <main className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800">Post not found</h1>
-          <Link href="/" className="text-blue-600 mt-4 inline-block">← Back to Home</Link>
+          <Link href="/community" className="text-blue-600 mt-4 inline-block">← Back to Community</Link>
         </div>
       </main>
     );
@@ -348,6 +414,13 @@ function CommunityDetailPage() {
     showNotification("评论成功");
   };
 
+  const toggleGridLayout = () => {
+    const newLayout = gridColumns === 2 ? 1 : 2;
+    setGridColumns(newLayout);
+    localStorage.setItem("related_posts_grid_layout", newLayout.toString());
+    showNotification(newLayout === 2 ? "切换为两列视图" : "切换为一列视图");
+  };
+
   const t = (zh, en) => language === "中文" ? zh : en;
 
   return (
@@ -366,7 +439,7 @@ function CommunityDetailPage() {
               {user ? (
                 <div className="relative">
                   <button onClick={() => setShowUserMenu(!showUserMenu)} className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 rounded-full px-3 py-1 transition"><span className="text-lg">👤</span><span className="text-sm font-medium hidden md:inline">{user.name?.split(' ')[0] || user.name}</span></button>
-                  {showUserMenu && (<div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border z-50"><div className="px-4 py-3 border-b"><p className="font-medium">{user.name}</p><p className="text-xs text-gray-500">{user.email}</p></div><Link href="/orders" className="block px-4 py-2 text-sm hover:bg-gray-100" onClick={() => setShowUserMenu(false)}>📋 {t("我的订单", "My Orders")}</Link><button onClick={() => { logout(); setShowUserMenu(false); }} className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">🚪 {t("退出登录", "Logout")}</button></div>)}
+                  {showUserMenu && (<div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border z-50"><div className="px-4 py-3 border-b"><p className="font-medium">{user.name}</p><p className="text-xs text-gray-500">{user.email}</p></div><Link href="/profile" className="block px-4 py-2 text-sm hover:bg-gray-100" onClick={() => setShowUserMenu(false)}>👤 {t("个人主页", "Profile")}</Link><Link href="/orders" className="block px-4 py-2 text-sm hover:bg-gray-100" onClick={() => setShowUserMenu(false)}>📋 {t("我的订单", "My Orders")}</Link><button onClick={() => { logout(); setShowUserMenu(false); }} className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">🚪 {t("退出登录", "Logout")}</button></div>)}
                 </div>
               ) : (<button onClick={() => setShowLoginModal(true)} className="text-sm text-blue-600 flex items-center gap-1"><span>👤</span> {t("登录/注册", "Login")}</button>)}
               <Link href="/profile" className="text-xl hover:text-blue-600 hidden md:inline">👤</Link>
@@ -377,7 +450,7 @@ function CommunityDetailPage() {
 
       {/* Post Content */}
       <div className="max-w-3xl mx-auto px-4 py-6">
-        <Link href="/" className="text-blue-600 mb-4 inline-block">← {t("返回首页", "Back to Home")}</Link>
+        <Link href="/community" className="text-blue-600 mb-4 inline-block">← {t("返回社区", "Back to Community")}</Link>
         
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           {/* Image Gallery */}
@@ -453,7 +526,6 @@ function CommunityDetailPage() {
             <div className="p-4">
               <h3 className="font-bold mb-3">{t("评论", "Comments")} ({comments.length})</h3>
               
-              {/* Add Comment */}
               <div className="flex gap-2 mb-4">
                 <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-sm">{user?.avatar || "👤"}</div>
                 <div className="flex-1">
@@ -462,7 +534,6 @@ function CommunityDetailPage() {
                 </div>
               </div>
 
-              {/* Comments List */}
               <div className="space-y-4">
                 {comments.map(comment => (
                   <div key={comment.id} className="flex gap-2">
@@ -485,13 +556,30 @@ function CommunityDetailPage() {
           )}
         </div>
 
-        {/* Related Posts */}
+        {/* Related Posts Section with Grid Toggle */}
         <div className="mt-8">
-          <h2 className="font-bold text-lg mb-4">{t("更多精彩内容", "More精彩内容")}</h2>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="font-bold text-lg">{t("更多精彩内容", "More精彩内容")}</h2>
+            <button 
+              onClick={toggleGridLayout}
+              className="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-600 transition px-3 py-1 rounded-full border border-gray-300 hover:border-blue-600 bg-white"
+            >
+              {gridColumns === 2 ? (
+                <>
+                  <span>⊞</span> {t("一列", "1 Col")}
+                </>
+              ) : (
+                <>
+                  <span>📋</span> {t("两列", "2 Cols")}
+                </>
+              )}
+            </button>
+          </div>
+          
+          <div className={`grid gap-3 ${gridColumns === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
             {communityPosts.filter(p => p.id !== postId).slice(0, 4).map(related => (
               <Link key={related.id} href={`/community/${related.id}`} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-                <div className="h-32 bg-cover bg-center" style={{ backgroundImage: `url(${related.images[0]})` }}></div>
+                <div className={`${gridColumns === 2 ? "h-32" : "h-48"} bg-cover bg-center`} style={{ backgroundImage: `url(${related.images[0]})` }}></div>
                 <div className="p-2">
                   <p className="text-xs font-medium line-clamp-2">{language === "中文" ? related.title : related.titleEn}</p>
                   <div className="flex gap-2 mt-1 text-xs text-gray-400">❤️ {related.likes} 💬 {related.comments}</div>

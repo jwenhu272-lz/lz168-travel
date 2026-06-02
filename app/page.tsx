@@ -11,14 +11,16 @@ export default function Home() {
   const [destination, setDestination] = useState("");
   const [departureDate, setDepartureDate] = useState("");
 
-  // Hero Carousel Slides
+  // Hero Carousel Slides - WITH NEW SAKURA SLIDE
   const heroSlides = [
     { id: 1, image: "https://i.postimg.cc/6Q8yRzmW/79c41b50-f71d-46f4-8479-5ac6a201baba.jpg", title: "秀美柳州·市井青云", titleEn: "Beautiful Liuzhou · Local Life", subtitle: "发现柳州 · 一站式本地旅游服务平台", subtitleEn: "Discover Liuzhou · One-stop Local Travel Platform", cta: "探索青云 →", ctaEn: "Explore Qingyun →", link: "/" },
     { id: 2, image: "https://i.imgur.com/JLmtc4Q.jpeg", title: "青云美食节", titleEn: "Qingyun Food Festival", subtitle: "限时特惠 · 正宗柳州螺蛳粉", subtitleEn: "Limited Offer · Authentic Liuzhou Luosifen", cta: "立即尝鲜 →", ctaEn: "Try Now →", link: "/food" },
-    { id: 3, image: "https://i.imgur.com/gDGV7JK.jpeg", title: "青云景区特惠", titleEn: "Qingyun Scenic Special", subtitle: "门票买一送一 · 限时抢购", subtitleEn: "Buy One Get One Free · Limited Time", cta: "查看详情 →", ctaEn: "View Details →", link: "/" }
+    { id: 3, image: "https://i.imgur.com/gDGV7JK.jpeg", title: "青云景区特惠", titleEn: "Qingyun Scenic Special", subtitle: "门票买一送一 · 限时抢购", subtitleEn: "Buy One Get One Free · Limited Time", cta: "查看详情 →", ctaEn: "View Details →", link: "/" },
+    // NEW SAKURA SLIDE
+    { id: 4, image: "https://i.postimg.cc/jdTdR8G0/56fdb60c-7224-4a3f-9f45-8d7b787e0718.jpg", title: "🌸 柳州樱花季", titleEn: "🌸 Liuzhou Sakura Season", subtitle: "4-5月 · 青云湖畔樱花盛开 · 春日限定浪漫", subtitleEn: "Apr-May · Cherry blossoms by Qingyun Lake · Spring limited romance", cta: "查看攻略 →", ctaEn: "View Guide →", link: "/community/9" },
   ];
 
-  // Community Posts
+  // Community Posts - WITH NEW SAKURA POSTS
   const communityPosts = [
     { id: 1, username: "柳州美食家", usernameEn: "Liuzhou Foodie", avatar: "🍜", image: "https://i.imgur.com/2ZsKVrr.jpeg", title: "青云螺蛳粉探店！正宗柳州味", titleEn: "Qingyun Luosifen Review!", likes: 1289, comments: 89, saves: 345 },
     { id: 2, username: "旅游达人小周", usernameEn: "Travel Expert", avatar: "✈️", image: "https://i.imgur.com/aPGiMDW.jpeg", title: "青云景区最美打卡点推荐", titleEn: "Best Photo Spots", likes: 2345, comments: 156, saves: 678 },
@@ -28,6 +30,10 @@ export default function Home() {
     { id: 6, username: "青云官方", usernameEn: "Qingyun Official", avatar: "🎫", image: "https://i.imgur.com/RJCokjp.jpeg", title: "青云景区新活动来啦！", titleEn: "New Events at Qingyun!", likes: 987, comments: 56, saves: 234 },
     { id: 7, username: "自驾游阿强", usernameEn: "Road Trip A Qiang", avatar: "🚗", image: "https://i.imgur.com/OTLyVMr.jpeg", title: "柳州周边自驾游路线推荐", titleEn: "Road Trip Routes", likes: 654, comments: 43, saves: 187 },
     { id: 8, username: "美食探店小分队", usernameEn: "Food Explorer", avatar: "🍲", image: "https://i.imgur.com/tGPXcMx.jpeg", title: "青云早茶文化体验", titleEn: "Morning Tea Experience", likes: 2341, comments: 167, saves: 543 },
+    // NEW SAKURA POST #9
+    { id: 9, username: "柳州文旅", usernameEn: "Liuzhou Culture & Tourism", avatar: "🌸", image: "https://i.postimg.cc/fRLsb1Cg/88b7da59-78a1-4183-a24e-2f4b3e89150d.jpg", title: "🌸 柳州樱花季 · 春日限定浪漫", titleEn: "🌸 Liuzhou Sakura Season · Spring Limited Romance", likes: 3421, comments: 278, saves: 901 },
+    // NEW SAKURA POST #10
+    { id: 10, username: "摄影小王子", usernameEn: "Photography Prince", avatar: "📸", image: "https://i.postimg.cc/kGrsJytT/701d4ac2-a167-444c-94b9-a7602c36a405.jpg", title: "樱花拍照秘籍｜柳州樱花季必看", titleEn: "Sakura Photography Secrets | Must-See for Liuzhou Sakura Season", likes: 2856, comments: 189, saves: 567 },
   ];
 
   const filteredPosts = communityPosts.filter(post => {
@@ -82,30 +88,18 @@ export default function Home() {
   return (
     <main style={{ minHeight: "100vh", backgroundColor: "#f3f4f6", paddingBottom: "80px" }}>
       
-      {/* Header with Logo - BIGGER LOGO */}
+      {/* Header with Logo */}
       <header style={{ backgroundColor: "white", borderBottom: "1px solid #e5e7eb", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "12px 20px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
-            {/* Logo - BIGGER size (110px) */}
             <div style={{ flexShrink: 0 }}>
               <img 
                 src="https://i.postimg.cc/Gpdh7wrS/Photoroom-20260530-010622.png" 
                 alt="Lz168.com" 
-                style={{ 
-                  height: "110px", 
-                  width: "auto", 
-                  display: "block"
-                }}
+                style={{ height: "110px", width: "auto", display: "block" }}
               />
             </div>
-            
-            {/* Icons - Top Right - NO BORDER (original style) */}
-            <div style={{ 
-              display: "flex", 
-              gap: "20px", 
-              color: "#6b7280", 
-              flexShrink: 0
-            }}>
+            <div style={{ display: "flex", gap: "20px", color: "#6b7280", flexShrink: 0 }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
                 <span style={{ fontSize: "22px" }}>🔔</span>
                 <span style={{ fontSize: "12px" }}>{language === "中文" ? "消息" : "Messages"}</span>
@@ -127,7 +121,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 2-Row Menu - REMOVED PINK BACKGROUND, ADDED GOLD BORDER */}
+      {/* 2-Row Menu */}
       <div style={{ 
         backgroundColor: "white",
         borderBottom: "1px solid #d4af37",
@@ -136,60 +130,21 @@ export default function Home() {
         boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
       }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 20px" }}>
-          {/* Row 1 */}
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(4, 1fr)", 
-            gap: "8px",
-            marginBottom: "16px",
-            textAlign: "center"
-          }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px", marginBottom: "16px", textAlign: "center" }}>
             {menuRow1.map((item) => (
-              <Link 
-                key={item.id}
-                href={item.link}
-                style={{ 
-                  textDecoration: "none",
-                  padding: "12px 4px",
-                  display: "block",
-                  transition: "transform 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
+              <Link key={item.id} href={item.link} style={{ textDecoration: "none", padding: "12px 4px", display: "block", transition: "transform 0.2s" }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
+                onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}>
                 <div style={{ fontSize: "32px", marginBottom: "6px" }}>{item.icon}</div>
                 <div style={{ fontSize: "13px", fontWeight: "600", color: "#C41E6B" }}>{language === "中文" ? item.label : item.labelEn}</div>
               </Link>
             ))}
           </div>
-          {/* Row 2 */}
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(4, 1fr)", 
-            gap: "8px",
-            textAlign: "center"
-          }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px", textAlign: "center" }}>
             {menuRow2.map((item) => (
-              <Link 
-                key={item.id}
-                href={item.link}
-                style={{ 
-                  textDecoration: "none",
-                  padding: "12px 4px",
-                  display: "block",
-                  transition: "transform 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
+              <Link key={item.id} href={item.link} style={{ textDecoration: "none", padding: "12px 4px", display: "block", transition: "transform 0.2s" }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
+                onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}>
                 <div style={{ fontSize: "32px", marginBottom: "6px" }}>{item.icon}</div>
                 <div style={{ fontSize: "13px", fontWeight: "600", color: "#C41E6B" }}>{language === "中文" ? item.label : item.labelEn}</div>
               </Link>
@@ -202,14 +157,8 @@ export default function Home() {
       <div style={{ position: "relative", width: "100%", paddingBottom: "66.67%", overflow: "hidden" }}>
         {heroSlides.map((slide, idx) => (
           <div key={slide.id} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, transition: "opacity 0.5s", opacity: currentSlide === idx ? 1 : 0 }}>
-            <img 
-              src={slide.image} 
-              alt={slide.title}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              onError={(e) => {
-                e.target.src = "https://picsum.photos/id/104/1200/500";
-              }}
-            />
+            <img src={slide.image} alt={slide.title} style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              onError={(e) => e.target.src = "https://picsum.photos/id/104/1200/500"} />
             <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.35)" }}></div>
             <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: "white", textAlign: "center", padding: "20px" }}>
               <div>
@@ -276,15 +225,8 @@ export default function Home() {
             {filteredPosts.slice(0, 6).map((post) => (
               <Link href={`/community/${post.id}`} key={post.id} style={{ textDecoration: "none", display: "block" }}>
                 <div style={{ backgroundColor: "white", borderRadius: "12px", overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.12)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.1)";
-                  }}
-                >
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.12)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.1)"; }}>
                   <div style={{ height: "192px", backgroundImage: `url(${post.image})`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
                   <div style={{ padding: "16px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
@@ -332,7 +274,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Bottom Navigation */}
       <BottomNav language={language} />
 
       <style jsx>{`

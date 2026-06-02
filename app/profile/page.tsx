@@ -61,6 +61,7 @@ function ProfilePageContent() {
   const [activeTab, setActiveTab] = useState('bookings');
   const [bookings, setBookings] = useState([]);
   const [savedItems, setSavedItems] = useState([]);
+  const [userPosts, setUserPosts] = useState([]);
   const [points, setPoints] = useState(450);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -80,6 +81,10 @@ function ProfilePageContent() {
 
     const saved = JSON.parse(localStorage.getItem('saved_items') || '[]');
     setSavedItems(saved);
+
+    // Load user's own community posts
+    const userCreatedPosts = JSON.parse(localStorage.getItem('user_posts') || '[]');
+    setUserPosts(userCreatedPosts);
 
     const totalSpent = allBookings.reduce((sum, order) => sum + order.total, 0);
     setPoints(Math.floor(totalSpent / 10));
@@ -101,11 +106,19 @@ function ProfilePageContent() {
   };
 
   const removeSavedItem = (id, e) => {
-    e.preventDefault(); // Prevent navigation when clicking remove
+    e.preventDefault();
     const newSaved = savedItems.filter((item) => item.id !== id);
     setSavedItems(newSaved);
     localStorage.setItem('saved_items', JSON.stringify(newSaved));
     showNotification(language === '中文' ? '已取消收藏' : 'Removed from saved');
+  };
+
+  const deleteUserPost = (postId, e) => {
+    e.preventDefault();
+    const updatedPosts = userPosts.filter(post => post.id !== postId);
+    setUserPosts(updatedPosts);
+    localStorage.setItem('user_posts', JSON.stringify(updatedPosts));
+    showNotification(language === '中文' ? '帖子已删除' : 'Post deleted');
   };
 
   const getMembershipTier = () => {
@@ -295,12 +308,12 @@ function ProfilePageContent() {
           </div>
         </div>
 
-        {/* Tabs */}
+        {/* Tabs - 4 Tabs including My Posts */}
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div className="flex border-b">
+          <div className="flex border-b overflow-x-auto">
             <button
               onClick={() => setActiveTab('bookings')}
-              className={`flex-1 py-3 text-center font-medium transition ${
+              className={`flex-1 py-3 text-center font-medium transition whitespace-nowrap px-3 ${
                 activeTab === 'bookings'
                   ? 'text-blue-600 border-b-2 border-blue-600'
                   : 'text-gray-500'
@@ -309,8 +322,18 @@ function ProfilePageContent() {
               📋 {t('我的订单', 'My Orders')}
             </button>
             <button
+              onClick={() => setActiveTab('posts')}
+              className={`flex-1 py-3 text-center font-medium transition whitespace-nowrap px-3 ${
+                activeTab === 'posts'
+                  ? 'text-blue-600 border-b-2 border-blue-600'
+                  : 'text-gray-500'
+              }`}
+            >
+              📝 {t('我的帖子', 'My Posts')}
+            </button>
+            <button
               onClick={() => setActiveTab('saved')}
-              className={`flex-1 py-3 text-center font-medium transition ${
+              className={`flex-1 py-3 text-center font-medium transition whitespace-nowrap px-3 ${
                 activeTab === 'saved'
                   ? 'text-blue-600 border-b-2 border-blue-600'
                   : 'text-gray-500'
@@ -320,7 +343,7 @@ function ProfilePageContent() {
             </button>
             <button
               onClick={() => setActiveTab('settings')}
-              className={`flex-1 py-3 text-center font-medium transition ${
+              className={`flex-1 py-3 text-center font-medium transition whitespace-nowrap px-3 ${
                 activeTab === 'settings'
                   ? 'text-blue-600 border-b-2 border-blue-600'
                   : 'text-gray-500'
@@ -386,7 +409,81 @@ function ProfilePageContent() {
             </div>
           )}
 
-          {/* Saved Tab - Clickable items */}
+          {/* Posts Tab - NEW: Display user's community posts */}
+          {activeTab === 'posts' && (
+            <div className="p-4">
+              {userPosts.length === 0 ? (
+                <div className="text-center py-12">
+                  <div className="text-5xl mb-4">📝</div>
+                  <p className="text-gray-400">
+                    {t('暂无帖子', 'No posts yet')}
+                  </p>
+                  <Link
+                    href="/community/new"
+                    className="inline-block mt-4 text-blue-600"
+                  >
+                    {t('发布第一条动态', 'Create First Post')} →
+                  </Link>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {userPosts.map((post) => (
+                    <Link
+                      href={`/community/${post.id}`}
+                      key={post.id}
+                      className="block border rounded-xl p-4 hover:shadow-md transition hover:bg-gray-50"
+                    >
+                      <div className="flex gap-4">
+                        {/* Post Image */}
+                        <div className="w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
+                          <img 
+                            src={post.images?.[0] || 'https://picsum.photos/id/104/100/100'} 
+                            alt=""
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.target.src = 'https://picsum.photos/id/104/100/100';
+                            }}
+                          />
+                          {post.images?.length > 1 && (
+                            <div className="absolute bottom-1 right-1 bg-black bg-opacity-50 text-white text-xs px-1 rounded">
+                              +{post.images.length}
+                            </div>
+                          )}
+                        </div>
+                        
+                        {/* Post Content */}
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-sm">{post.avatar || '👤'}</span>
+                            <span className="text-xs text-gray-500">{post.username || user.name}</span>
+                            <span className="text-xs text-gray-400">· {post.timeAgo || t('刚刚', 'Just now')}</span>
+                          </div>
+                          <h3 className="font-medium text-sm line-clamp-1">{post.title}</h3>
+                          <p className="text-gray-500 text-xs line-clamp-2 mt-1">{post.description}</p>
+                          <div className="flex gap-4 mt-2 text-xs text-gray-400">
+                            <span>❤️ {post.likes || 0}</span>
+                            <span>💬 {post.comments || 0}</span>
+                            <span>⭐ {post.saves || 0}</span>
+                          </div>
+                        </div>
+                        
+                        {/* Delete Button */}
+                        <button 
+                          onClick={(e) => deleteUserPost(post.id, e)}
+                          className="text-red-400 text-sm hover:text-red-600 self-center px-2"
+                          title={t('删除帖子', 'Delete post')}
+                        >
+                          🗑️
+                        </button>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Saved Tab */}
           {activeTab === 'saved' && (
             <div className="p-4">
               {savedItems.length === 0 ? (
@@ -409,8 +506,7 @@ function ProfilePageContent() {
                     if (item.type === 'food') href = `/food/${item.id}`;
                     else if (item.type === 'hotel') href = `/hotel/${item.id}`;
                     else if (item.type === 'tour') href = `/tour/${item.id}`;
-                    else if (item.type === 'post')
-                      href = `/community/${item.id}`;
+                    else if (item.type === 'post') href = `/community/${item.id}`;
 
                     return (
                       <Link
