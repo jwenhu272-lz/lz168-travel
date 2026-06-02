@@ -556,7 +556,7 @@ function CommunityDetailPage() {
           )}
         </div>
 
-        {/* Related Posts Section with Grid Toggle */}
+        {/* Related Posts Section with Grid Toggle - FIXED: 2 columns on all screens */}
         <div className="mt-8">
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-bold text-lg">{t("更多精彩内容", "More精彩内容")}</h2>
@@ -566,17 +566,18 @@ function CommunityDetailPage() {
             >
               {gridColumns === 2 ? (
                 <>
-                  <span>⊞</span> {t("一列", "1 Col")}
+                  <span>📋</span> {t("一列", "1 Col")}
                 </>
               ) : (
                 <>
-                  <span>📋</span> {t("两列", "2 Cols")}
+                  <span>⊞</span> {t("两列", "2 Cols")}
                 </>
               )}
             </button>
           </div>
           
-          <div className={`grid gap-3 ${gridColumns === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
+          {/* FIXED: Using grid-cols-2 for all screen sizes when gridColumns === 2 */}
+          <div className={`grid gap-3 ${gridColumns === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
             {communityPosts.filter(p => p.id !== postId).slice(0, 4).map(related => (
               <Link key={related.id} href={`/community/${related.id}`} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
                 <div className={`${gridColumns === 2 ? "h-32" : "h-48"} bg-cover bg-center`} style={{ backgroundImage: `url(${related.images[0]})` }}></div>

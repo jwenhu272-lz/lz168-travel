@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import BottomNav from "@/components/BottomNav";
+import AIChatbot from "@/components/AIChatbot";  // ADD THIS IMPORT
 
 export default function Home() {
   const [language, setLanguage] = useState("中文");
@@ -11,16 +12,15 @@ export default function Home() {
   const [destination, setDestination] = useState("");
   const [departureDate, setDepartureDate] = useState("");
 
-  // Hero Carousel Slides - WITH NEW SAKURA SLIDE
+  // Hero Carousel Slides
   const heroSlides = [
     { id: 1, image: "https://i.postimg.cc/6Q8yRzmW/79c41b50-f71d-46f4-8479-5ac6a201baba.jpg", title: "秀美柳州·市井青云", titleEn: "Beautiful Liuzhou · Local Life", subtitle: "发现柳州 · 一站式本地旅游服务平台", subtitleEn: "Discover Liuzhou · One-stop Local Travel Platform", cta: "探索青云 →", ctaEn: "Explore Qingyun →", link: "/" },
     { id: 2, image: "https://i.imgur.com/JLmtc4Q.jpeg", title: "青云美食节", titleEn: "Qingyun Food Festival", subtitle: "限时特惠 · 正宗柳州螺蛳粉", subtitleEn: "Limited Offer · Authentic Liuzhou Luosifen", cta: "立即尝鲜 →", ctaEn: "Try Now →", link: "/food" },
     { id: 3, image: "https://i.imgur.com/gDGV7JK.jpeg", title: "青云景区特惠", titleEn: "Qingyun Scenic Special", subtitle: "门票买一送一 · 限时抢购", subtitleEn: "Buy One Get One Free · Limited Time", cta: "查看详情 →", ctaEn: "View Details →", link: "/" },
-    // NEW SAKURA SLIDE
     { id: 4, image: "https://i.postimg.cc/jdTdR8G0/56fdb60c-7224-4a3f-9f45-8d7b787e0718.jpg", title: "🌸 柳州樱花季", titleEn: "🌸 Liuzhou Sakura Season", subtitle: "4-5月 · 青云湖畔樱花盛开 · 春日限定浪漫", subtitleEn: "Apr-May · Cherry blossoms by Qingyun Lake · Spring limited romance", cta: "查看攻略 →", ctaEn: "View Guide →", link: "/community/9" },
   ];
 
-  // Community Posts - WITH NEW SAKURA POSTS
+  // Community Posts
   const communityPosts = [
     { id: 1, username: "柳州美食家", usernameEn: "Liuzhou Foodie", avatar: "🍜", image: "https://i.imgur.com/2ZsKVrr.jpeg", title: "青云螺蛳粉探店！正宗柳州味", titleEn: "Qingyun Luosifen Review!", likes: 1289, comments: 89, saves: 345 },
     { id: 2, username: "旅游达人小周", usernameEn: "Travel Expert", avatar: "✈️", image: "https://i.imgur.com/aPGiMDW.jpeg", title: "青云景区最美打卡点推荐", titleEn: "Best Photo Spots", likes: 2345, comments: 156, saves: 678 },
@@ -30,9 +30,7 @@ export default function Home() {
     { id: 6, username: "青云官方", usernameEn: "Qingyun Official", avatar: "🎫", image: "https://i.imgur.com/RJCokjp.jpeg", title: "青云景区新活动来啦！", titleEn: "New Events at Qingyun!", likes: 987, comments: 56, saves: 234 },
     { id: 7, username: "自驾游阿强", usernameEn: "Road Trip A Qiang", avatar: "🚗", image: "https://i.imgur.com/OTLyVMr.jpeg", title: "柳州周边自驾游路线推荐", titleEn: "Road Trip Routes", likes: 654, comments: 43, saves: 187 },
     { id: 8, username: "美食探店小分队", usernameEn: "Food Explorer", avatar: "🍲", image: "https://i.imgur.com/tGPXcMx.jpeg", title: "青云早茶文化体验", titleEn: "Morning Tea Experience", likes: 2341, comments: 167, saves: 543 },
-    // NEW SAKURA POST #9
     { id: 9, username: "柳州文旅", usernameEn: "Liuzhou Culture & Tourism", avatar: "🌸", image: "https://i.postimg.cc/fRLsb1Cg/88b7da59-78a1-4183-a24e-2f4b3e89150d.jpg", title: "🌸 柳州樱花季 · 春日限定浪漫", titleEn: "🌸 Liuzhou Sakura Season · Spring Limited Romance", likes: 3421, comments: 278, saves: 901 },
-    // NEW SAKURA POST #10
     { id: 10, username: "摄影小王子", usernameEn: "Photography Prince", avatar: "📸", image: "https://i.postimg.cc/kGrsJytT/701d4ac2-a167-444c-94b9-a7602c36a405.jpg", title: "樱花拍照秘籍｜柳州樱花季必看", titleEn: "Sakura Photography Secrets | Must-See for Liuzhou Sakura Season", likes: 2856, comments: 189, saves: 567 },
   ];
 
@@ -73,9 +71,9 @@ export default function Home() {
   // Menu items
   const menuRow1 = [
     { id: "food", icon: "🍜", label: "美食", labelEn: "Food", link: "/food" },
-    { id: "luosifen", icon: "🍲", label: "螺蛳粉", labelEn: "Luosifen", link: "/food" },
-    { id: "market", icon: "🏮", label: "青云夜市", labelEn: "Qingyun Market", link: "/food" },
-    { id: "secret", icon: "🔮", label: "小众秘境", labelEn: "Secret Spots", link: "/tour" },
+    { id: "luosifen", icon: "🍲", label: "螺蛳粉", labelEn: "Luosifen", link: "/food/luosifen" },
+    { id: "market", icon: "🏮", label: "青云市场", labelEn: "Qingyun Market", link: "/food/market" },
+    { id: "secret", icon: "🔮", label: "小众秘境", labelEn: "Secret Spots", link: "/tour/secret" },
   ];
 
   const menuRow2 = [
@@ -108,10 +106,10 @@ export default function Home() {
                 <span style={{ fontSize: "22px" }}>💬</span>
                 <span style={{ fontSize: "12px" }}>{language === "中文" ? "客服" : "Support"}</span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
+              <Link href="/profile" style={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer", textDecoration: "none", color: "#6b7280" }}>
                 <span style={{ fontSize: "22px" }}>👤</span>
                 <span style={{ fontSize: "12px" }}>{language === "中文" ? "我的" : "Profile"}</span>
-              </div>
+              </Link>
               <div onClick={toggleLanguage} style={{ display: "flex", flexDirection: "column", alignItems: "center", cursor: "pointer" }}>
                 <span style={{ fontSize: "22px" }}>🌐</span>
                 <span style={{ fontSize: "12px" }}>{language}</span>
@@ -261,18 +259,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* AI Chatbot */}
-      <div style={{ position: "fixed", bottom: "80px", right: "16px", zIndex: 50 }}>
-        <div style={{ position: "relative", cursor: "pointer" }}>
-          <div style={{ position: "absolute", inset: "-8px", backgroundColor: "#0052CC", borderRadius: "999px", opacity: 0.75, animation: "pulse 1.5s infinite" }}></div>
-          <div style={{ position: "relative", backgroundColor: "#0052CC", borderRadius: "999px", padding: "12px", boxShadow: "0 10px 25px -5px rgba(0,0,0,0.1)", transition: "transform 0.2s" }}>
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <span style={{ fontSize: "28px" }}>🤖</span>
-              <span style={{ color: "white", fontSize: "10px", marginTop: "4px", fontWeight: "500" }}>{language === "中文" ? "AI助手" : "AI Help"}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* AI Chatbot - Using the same component as other pages */}
+      <AIChatbot language={language} />
 
       <BottomNav language={language} />
 

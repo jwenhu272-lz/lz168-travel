@@ -7,7 +7,7 @@ import BottomNav from "@/components/BottomNav";
 import Logo from "@/components/Logo";
 import AIChatbot from "@/components/AIChatbot";
 
-// ALL community posts data
+// COMPLETE community posts data - ALL 10 POSTS (same as [id]/page.tsx)
 const communityPosts = [
   { 
     id: 1, 
@@ -288,11 +288,9 @@ function CommunityPage() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
-  // State for grid layout - default to 2 columns
   const [gridColumns, setGridColumns] = useState(2);
 
   useEffect(() => {
-    // Load saved preference for grid layout
     const savedGridPreference = localStorage.getItem("community_grid_layout");
     if (savedGridPreference) {
       setGridColumns(parseInt(savedGridPreference));
@@ -311,7 +309,6 @@ function CommunityPage() {
 
   const t = (zh, en) => language === "中文" ? zh : en;
 
-  // Filter posts based on search and category
   const filteredPosts = communityPosts.filter(post => {
     const matchesSearch = searchQuery === "" || 
       (language === "中文" ? post.title : post.titleEn).toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -333,7 +330,6 @@ function CommunityPage() {
     <main className="min-h-screen bg-gray-100 pb-24">
       <LoginModal isOpen={showLoginModal} onClose={() => setShowLoginModal(false)} onLogin={() => {}} onRegister={() => {}} language={language} />
 
-      {/* Header */}
       <header className="bg-white border-b shadow-sm sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
@@ -360,15 +356,14 @@ function CommunityPage() {
             <button 
               onClick={toggleGridLayout}
               className="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-600 transition px-3 py-2 rounded-full border border-gray-300 hover:border-blue-600 bg-white"
-              title={gridColumns === 2 ? t("切换为一列", "Switch to 1 column") : t("切换为两列", "Switch to 2 columns")}
             >
               {gridColumns === 2 ? (
                 <>
-                  <span>⊞</span> {t("一列", "1 Col")}
+                  <span>📋</span> {t("一列", "1 Col")}
                 </>
               ) : (
                 <>
-                  <span>📋</span> {t("两列", "2 Cols")}
+                  <span>⊞</span> {t("两列", "2 Cols")}
                 </>
               )}
             </button>
@@ -410,18 +405,17 @@ function CommunityPage() {
           ))}
         </div>
 
-        {/* Posts Grid - Dynamic based on gridColumns state */}
+        {/* Posts Grid - FIXED: 2 columns on all screens */}
         {filteredPosts.length === 0 ? (
           <div className="text-center py-12 bg-white rounded-xl">
             <p className="text-gray-400 text-lg">{t("暂无相关内容", "No content found")}</p>
             <p className="text-gray-300 text-sm mt-1">{t("试试其他搜索词或筛选条件", "Try other search terms or filters")}</p>
           </div>
         ) : (
-          <div className={`grid gap-4 ${gridColumns === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
+          <div className={`grid gap-4 ${gridColumns === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
             {filteredPosts.map((post) => (
               <Link href={`/community/${post.id}`} key={post.id}>
                 <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all hover:-translate-y-1 cursor-pointer">
-                  {/* Image */}
                   <div className="relative aspect-square bg-gray-100">
                     <img 
                       src={post.images[0]} 
@@ -435,8 +429,6 @@ function CommunityPage() {
                       </div>
                     )}
                   </div>
-                  
-                  {/* Content */}
                   <div className="p-3">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-5 h-5 bg-gray-200 rounded-full flex items-center justify-center text-xs">{post.avatar}</div>
@@ -456,10 +448,7 @@ function CommunityPage() {
         )}
       </div>
 
-      {/* AI Chatbot */}
       <AIChatbot language={language} />
-
-      {/* Bottom Navigation */}
       <BottomNav language={language} />
     </main>
   );
