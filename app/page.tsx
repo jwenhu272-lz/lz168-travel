@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import BottomNav from "@/components/BottomNav";
-import AIChatbot from "@/components/AIChatbot";  // ADD THIS IMPORT
+import AIChatbot from "@/components/AIChatbot";
 
 export default function Home() {
   const [language, setLanguage] = useState("中文");
@@ -68,10 +68,10 @@ export default function Home() {
     }
   };
 
-  // Menu items
+  // Menu items - FIXED: luosifen link is now /luosifen
   const menuRow1 = [
     { id: "food", icon: "🍜", label: "美食", labelEn: "Food", link: "/food" },
-    { id: "luosifen", icon: "🍲", label: "螺蛳粉", labelEn: "Luosifen", link: "/food/luosifen" },
+    { id: "luosifen", icon: "🍲", label: "螺蛳粉", labelEn: "Luosifen", link: "/luosifen" },
     { id: "market", icon: "🏮", label: "青云市场", labelEn: "Qingyun Market", link: "/food/market" },
     { id: "secret", icon: "🔮", label: "小众秘境", labelEn: "Secret Spots", link: "/tour/secret" },
   ];
@@ -259,7 +259,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* AI Chatbot - Using the same component as other pages */}
+      {/* AI Chatbot */}
       <AIChatbot language={language} />
 
       <BottomNav language={language} />
