@@ -160,9 +160,11 @@ function LuosifenPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("default");
-  const [gridColumns, setGridColumns] = useState(2); // 2 = two columns, 1 = one column
+  const [gridColumns, setGridColumns] = useState(2);
   const [showFilters, setShowFilters] = useState(false);
+  const [imageErrors, setImageErrors] = useState({});
 
+  // Load saved grid preference
   useEffect(() => {
     const savedGrid = localStorage.getItem("luosifen_grid_layout");
     if (savedGrid) {
@@ -170,13 +172,35 @@ function LuosifenPage() {
     }
   }, []);
 
+  // Restore scroll position when coming BACK from detail page (CORRECT)
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem("luosifen_list_scroll_position");
+    if (savedScrollPosition) {
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: parseInt(savedScrollPosition),
+          behavior: "instant"
+        });
+        sessionStorage.removeItem("luosifen_list_scroll_position");
+      });
+    }
+  }, []);
+
   const toggleLanguage = () => setLanguage(language === "中文" ? "EN" : "中文");
   
-  // CORRECTED TOGGLE LOGIC - Same as community page
   const toggleGridLayout = () => {
     const newLayout = gridColumns === 2 ? 1 : 2;
     setGridColumns(newLayout);
     localStorage.setItem("luosifen_grid_layout", newLayout.toString());
+  };
+
+  const handleImageError = (brandId) => {
+    setImageErrors(prev => ({ ...prev, [brandId]: true }));
+  };
+
+  // Save scroll position BEFORE leaving to detail page (CORRECT)
+  const handleBrandClick = () => {
+    sessionStorage.setItem("luosifen_list_scroll_position", window.scrollY.toString());
   };
 
   let filteredBrands = luosifenBrands.filter(brand => {
@@ -203,6 +227,7 @@ function LuosifenPage() {
             <Logo />
             <div className="flex gap-3 items-center">
               <button onClick={toggleLanguage} className="text-xl">🌐</button>
+              <Link href="/cart" className="text-xl">🛒</Link>
               <Link href="/profile" className="text-xl">👤</Link>
             </div>
           </div>
@@ -248,7 +273,6 @@ function LuosifenPage() {
               <option value="price">{t("价格最低", "Price Low")}</option>
               <option value="reviews">{t("最受欢迎", "Popular")}</option>
             </select>
-            {/* CORRECTED TOGGLE BUTTON LOGIC */}
             <button 
               onClick={toggleGridLayout} 
               className="px-4 py-2 rounded-full border bg-white text-sm hover:bg-gray-50 transition"
@@ -286,13 +310,28 @@ function LuosifenPage() {
           {t("找到", "Found")} {filteredBrands.length} {t("个品牌", "brands")}
         </div>
 
-        {/* CORRECTED GRID - Same as community page */}
+        {/* Brands Grid */}
         <div className={`grid gap-5 ${gridColumns === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
           {filteredBrands.map((brand) => (
-            <Link key={brand.id} href={`/luosifen/${brand.id}`}>
+            <Link 
+              key={brand.id} 
+              href={`/luosifen/${brand.id}`}
+              onClick={handleBrandClick}  // Saves scroll position before leaving
+            >
               <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer">
-                <div className="h-40 bg-gradient-to-r from-orange-100 to-red-100 flex items-center justify-center">
-                  <div className="text-6xl">🍜</div>
+                <div className="h-44 bg-gradient-to-r from-orange-100 to-red-100 overflow-hidden">
+                  {!imageErrors[brand.id] ? (
+                    <img 
+                      src={brand.image} 
+                      alt={brand.name}
+                      className="w-full h-full object-cover"
+                      onError={() => handleImageError(brand.id)}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-6xl bg-gradient-to-r from-orange-100 to-red-100">
+                      🍜
+                    </div>
+                  )}
                 </div>
                 <div className="p-4">
                   <div className="flex justify-between items-start">

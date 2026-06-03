@@ -12,7 +12,7 @@ import AIChatbot from "@/components/AIChatbot";
 const brandData = {
   luobawang: {
     name: "螺霸王", nameEn: "Luobawang",
-    images: ["https://placehold.co/800x500/e94560/white?text=Product", "https://placehold.co/800x500/c0392b/white?text=Factory"],
+    images: ["https://i.postimg.cc/jSGQqYsM/fb3d8be6-9c78-46fb-9560-48a65afd141a.jpg", "https://i.postimg.cc/7YC5HBKN/2d447cdb-2bbb-45de-86a4-e3b06540b681.jpg", "https://i.postimg.cc/fRmkXVnz/294f8c66-5d39-4a49-840b-f573552da73e.jpg", "https://i.postimg.cc/K8B4L1Sh/281f7653-efb5-4128-bb5c-f6169c8f3cc5.jpg", "https://i.postimg.cc/WbDdN95d/0bdf4a1d-3c5d-4383-b520-4e8e67062926.jpg"],
     description: "柳州螺蛳粉龙头企业，拥有现代化工厂和博物馆。畅销全球30多个国家。",
     descriptionEn: "Leading Liuzhou Luosifen enterprise with modern factory and museum.",
     history: "成立于2012年，总部位于柳州鱼峰区。2016年建成全自动化生产线，2020年建成螺蛳粉博物馆。",
@@ -29,7 +29,7 @@ const brandData = {
   },
   humanhappy: {
     name: "人类快乐", nameEn: "Humanhappy",
-    images: ["https://placehold.co/800x500/f5a623/white?text=Fried+Egg", "https://placehold.co/800x500/e67e22/white?text=Factory"],
+    images: ["https://i.postimg.cc/FH2gFX9D/bd553d56-ded2-4cd9-9183-bb24f1b26cdd.jpg", "https://i.postimg.cc/kXV2JjTT/6d4e54ff-0c97-402e-a016-75c92d9f006b.jpg", "https://i.postimg.cc/zX9VVnMN/63bd8e6f-9631-4049-a3b5-332239f16c0a.jpg", "https://i.postimg.cc/28q1kH02/4bb1cbe6-e457-4557-9c97-b23c4738b4cd.jpg"],
     description: "2022年新锐品牌，首创预包装煎蛋螺蛳粉。月销300万+。",
     descriptionEn: "2022 innovative brand, first prepackaged fried egg luosifen.",
     history: "成立于2022年，总部位于柳南区。首创预包装煎蛋螺蛳粉，突破行业技术壁垒。",
@@ -46,7 +46,7 @@ const brandData = {
   },
   liufang: {
     name: "柳芳", nameEn: "Liufang",
-    images: ["https://placehold.co/800x500/27ae60/white?text=Product", "https://placehold.co/800x500/2ecc71/white?text=Factory"],
+    images: ["https://i.postimg.cc/CxWHMpFv/ca93d604-fc1f-4105-aaba-3f73ec67ada1.jpg", "https://i.postimg.cc/k5CGy7qb/a24cbab8-83ab-4223-a84c-900f0e77716e.jpg", "https://i.postimg.cc/HkXj5rDD/98b808ce-ed60-4be3-8e51-8617bfb05648.jpg", "https://i.postimg.cc/SxCj8n0B/84e69559-1f2d-44b1-835c-e4ea9a7ce3b1.jpg"],
     description: "柳州老牌螺蛳粉企业，传统工艺，地道风味。",
     descriptionEn: "Traditional Liuzhou Luosifen enterprise, authentic flavor.",
     history: "成立于2008年，总部位于柳北区。传统工艺传承者。",
@@ -63,7 +63,7 @@ const brandData = {
   },
   chenglong: {
     name: "陈龙", nameEn: "Chenglong",
-    images: ["https://placehold.co/800x500/e67e22/white?text=Gift+Box", "https://placehold.co/800x500/f39c12/white?text=Packaging"],
+    images: ["https://i.postimg.cc/XvgJHtYR/ef4796d1-95fb-41ed-949f-a8430fe40a46.jpg", "https://i.postimg.cc/LsVXCG87/e38619bb-9d1b-4d5d-84de-586d8988b111.jpg", "https://i.postimg.cc/KY5zqC8d/dd6e0579-f121-46f7-b5d3-230b4e258c27.jpg"],
     description: "福布斯500强合作伙伴，高端礼盒装螺蛳粉。",
     descriptionEn: "Fortune 500 partner, premium gift box luosifen.",
     history: "成立于2015年，总部位于城中区。高端礼品市场领导者。",
@@ -80,7 +80,7 @@ const brandData = {
   },
   liziqi: {
     name: "李子柒", nameEn: "Liziqi",
-    images: ["https://placehold.co/800x500/6c4a32/white?text=Product", "https://placehold.co/800x500/8e44ad/white?text=Packaging"],
+    images: ["https://i.postimg.cc/XYTcN6VH/897a89ee-7884-4183-a523-1bc6eceab134.jpg", "https://i.postimg.cc/9rhm1B5X/0f053196-2672-42c4-aaa2-a43731a67c81.jpg", "https://i.postimg.cc/rwxzWDXw/308ac038-71d3-44de-afb7-8df9f41f7e17.jpg", "https://i.postimg.cc/13w468hx/103c7cc1-6d34-4be7-9f91-7c423f4f1741.jpg"],
     description: "现象级网红品牌，东方美学包装，品质稳定。",
     descriptionEn: "Phenomenal internet celebrity brand, oriental aesthetic packaging.",
     history: "成立于2019年，总部位于柳东新区。东方美学设计。",
@@ -97,7 +97,7 @@ const brandData = {
   },
   haifuxiang: {
     name: "海福盛", nameEn: "Haifusheng",
-    images: ["https://placehold.co/800x500/3498db/white?text=Cup+Noodles", "https://placehold.co/800x500/2980b9/white?text=Packaging"],
+    images: ["https://i.postimg.cc/q7yczDqz/1ab706e7-07d4-4917-a09d-8f6a79ae655a.jpg", "https://i.postimg.cc/NjmLTKqr/50400c54-e8fc-4f3e-afe3-941cb3bca096.jpg", "https://i.postimg.cc/52LjvXdt/506f598d-4902-4e30-9b31-1bf910043585.jpg"],
     description: "冲泡型螺蛳粉专家，方便快捷。",
     descriptionEn: "Brewed luosifen expert, convenient and fast.",
     history: "成立于2016年，总部位于柳江区。冲泡型螺蛳粉开创者。",
@@ -114,7 +114,7 @@ const brandData = {
   },
   zhongliu: {
     name: "中柳", nameEn: "Zhongliu",
-    images: ["https://placehold.co/800x500/27ae60/white?text=Export", "https://placehold.co/800x500/1e8449/white?text=Container"],
+    images: ["https://i.postimg.cc/QdRkNZ8D/7031a00b-409e-4033-91cf-1cc94962d7b1.jpg", "https://i.postimg.cc/QMDCqjhn/c4a4869a-2e9d-420b-992d-2ee4c3db4fce.jpg", "https://i.postimg.cc/Jh80QRMY/bad2be39-63c8-445d-8494-8b593c0e7d41.jpg"],
     description: "专注出口品质，拥有国际食品安全认证。",
     descriptionEn: "Export-quality focus, international food safety certified.",
     history: "成立于2010年，总部位于阳和工业区。出口欧美市场。",
@@ -131,7 +131,7 @@ const brandData = {
   },
   shiweixian: {
     name: "食为先", nameEn: "Shiweixian",
-    images: ["https://placehold.co/800x500/e74c3c/white?text=Value+Pack", "https://placehold.co/800x500/c0392b/white?text=Factory"],
+    images: ["https://i.postimg.cc/YCJf2Brp/69591221-c003-403c-90a6-5e1744dfa6b1.jpg", "https://i.postimg.cc/tgzTS84D/d7e52113-d48d-4603-bf56-9cd65a9ceec3.jpg", "https://i.postimg.cc/ZK1CCrQs/19f55f17-c4f2-4d2d-bd29-f65fc8924d25.jpg", "https://i.postimg.cc/zX9VVnMN/63bd8e6f-9631-4049-a3b5-332239f16c0a.jpg", "https://i.postimg.cc/QxBF86fS/3d82c13d-1466-43c9-bff8-c8483a0f5a51.jpg"],
     description: "性价比之王，日产能超50万包。",
     descriptionEn: "Best value, daily production capacity exceeds 500,000 packs.",
     history: "成立于2014年，总部位于鹿寨县。大众市场领导者。",
@@ -148,7 +148,7 @@ const brandData = {
   },
   zhuangxiang: {
     name: "壮乡", nameEn: "Zhuangxiang",
-    images: ["https://placehold.co/800x500/9b59b6/white?text=Ethnic", "https://placehold.co/800x500/8e44ad/white?text=Culture"],
+    images: ["https://i.postimg.cc/BndcZfS6/56de1f87-212c-496d-b0c0-50d0e4785510.jpg", "https://i.postimg.cc/q7rqGp45/caadd2f1-dc92-47e1-88d1-9eadea3e4b57.jpg", "https://i.postimg.cc/KYbj5mxD/b3b84f93-4ef2-4283-9601-bf69d4769515.jpg", "https://i.postimg.cc/kXV2JjTT/6d4e54ff-0c97-402e-a016-75c92d9f006b.jpg", "https://i.postimg.cc/7YC5HBKN/2d447cdb-2bbb-45de-86a4-e3b06540b681.jpg", "https://i.postimg.cc/QMDCqjh9/411643d4-1049-4030-b15a-8e2af7c23c8d.jpg", "https://i.postimg.cc/SNwJJW50/36c92f15-bc95-4b2e-bfbb-e09cbcfdcf3d.jpg"],
     description: "民族特色品牌，融入壮族文化元素。",
     descriptionEn: "Ethnic brand with Zhuang cultural elements.",
     history: "成立于2018年，总部位于三江县。壮族文化传承者。",
@@ -179,10 +179,25 @@ function BrandDetailPage() {
 
   const brand = brandData[brandId];
 
+  // FIRST useEffect: Set default selected product and bulk option
   useEffect(() => {
     if (brand?.products?.length && !selectedProduct) setSelectedProduct(brand.products[0]);
     if (brand?.bulkOptions?.length && !selectedBulk) setSelectedBulk(brand.bulkOptions[0]);
   }, [brand]);
+
+  // SECOND useEffect: Restore scroll position when coming back from detail page
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem("luosifen_scroll_position");
+    if (savedScrollPosition) {
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: parseInt(savedScrollPosition),
+          behavior: "instant"
+        });
+        sessionStorage.removeItem("luosifen_scroll_position");
+      });
+    }
+  }, []);
 
   if (!brand) {
     return (
@@ -217,6 +232,7 @@ function BrandDetailPage() {
             <Logo />
             <div className="flex gap-3 items-center">
               <button onClick={toggleLanguage} className="text-xl">🌐</button>
+              <Link href="/cart" className="text-xl">🛒</Link>
               <Link href="/profile" className="text-xl">👤</Link>
             </div>
           </div>
@@ -224,7 +240,17 @@ function BrandDetailPage() {
       </header>
 
       <div className="max-w-6xl mx-auto px-4 py-6">
-        <Link href="/luosifen" className="text-orange-600 mb-4 inline-block">← {t("返回", "Back")}</Link>
+        <Link 
+          href="/luosifen" 
+          className="text-orange-600 mb-4 inline-block"
+          onClick={() => {
+            // Save current scroll position before navigating back
+            const currentScroll = window.scrollY;
+            sessionStorage.setItem("luosifen_scroll_position", currentScroll.toString());
+          }}
+        >
+          ← {t("返回", "Back")}
+        </Link>
 
         {/* Image Gallery */}
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6">
@@ -283,6 +309,16 @@ function BrandDetailPage() {
                 <div className="text-orange-600 font-bold">¥{option.price}</div>
                 <div className="text-xs text-gray-500">≈ ¥{option.unitPrice}/{t("包", "pack")}</div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <h2 className="text-xl font-bold mb-4">{t("资质认证", "Certifications")}</h2>
+          <div className="flex flex-wrap gap-2">
+            {brand.certifications.map((cert, idx) => (
+              <span key={idx} className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">✓ {cert}</span>
             ))}
           </div>
         </div>
