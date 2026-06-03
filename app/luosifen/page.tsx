@@ -13,7 +13,7 @@ const luosifenBrands = [
     id: "luobawang",
     name: "螺霸王",
     nameEn: "Luobawang",
-    image: "https://placehold.co/600x400/e94560/white?text=Luobawang",
+    image: "https://i.postimg.cc/MTm5H3HT/5ff8f73d-65f4-4d5d-a9ba-1084ab8e2ea6.jpg",
     description: "柳州螺蛳粉龙头企业，拥有现代化工厂和博物馆。畅销全球30多个国家，日产超百万包。",
     descriptionEn: "Leading Liuzhou Luosifen enterprise with modern factory and museum. Sold in 30+ countries.",
     price: 68,
@@ -28,7 +28,7 @@ const luosifenBrands = [
     id: "humanhappy",
     name: "人类快乐",
     nameEn: "Humanhappy",
-    image: "https://placehold.co/600x400/f5a623/white?text=Humanhappy",
+    image: "https://i.postimg.cc/vT8zV7xZ/b7a9cb4d-327e-42d5-9936-9b5269959173.jpg",
     description: "2022年新锐品牌，首创预包装煎蛋螺蛳粉。月销300万+，谭健次代言。",
     descriptionEn: "2022 innovative brand, first to create prepackaged fried egg luosifen. 3M+ monthly sales.",
     price: 13.9,
@@ -43,7 +43,7 @@ const luosifenBrands = [
     id: "liufang",
     name: "柳芳",
     nameEn: "Liufang",
-    image: "https://placehold.co/600x400/27ae60/white?text=Liufang",
+    image: "https://i.postimg.cc/FzFZLbkk/f474a15c-c1d2-4ffe-a775-494211745031.jpg",
     description: "柳州老牌螺蛳粉企业，传统工艺，地道风味。深受本地人喜爱。",
     descriptionEn: "Traditional Liuzhou Luosifen enterprise, authentic flavor loved by locals.",
     price: 55,
@@ -58,7 +58,7 @@ const luosifenBrands = [
     id: "chenglong",
     name: "陈龙",
     nameEn: "Chenglong",
-    image: "https://placehold.co/600x400/e67e22/white?text=Chenglong",
+    image: "https://i.postimg.cc/PxQyJVJ8/889b9b53-1937-49a7-8eb2-e27b484f2099.jpg",
     description: "福布斯500强合作伙伴，高端礼盒装螺蛳粉，适合送礼。",
     descriptionEn: "Fortune 500 partner, premium gift box luosifen perfect for gifting.",
     price: 65.28,
@@ -73,7 +73,7 @@ const luosifenBrands = [
     id: "liziqi",
     name: "李子柒",
     nameEn: "Liziqi",
-    image: "https://placehold.co/600x400/6c4a32/white?text=Liziqi",
+    image: "https://i.postimg.cc/0Q0njXjK/520f9c84-8bc5-4228-afa0-36a8ff24b268.jpg",
     description: "现象级网红品牌，东方美学包装，品质稳定。",
     descriptionEn: "Phenomenal internet celebrity brand, oriental aesthetic packaging, stable quality.",
     price: 62.80,
@@ -88,7 +88,7 @@ const luosifenBrands = [
     id: "haifuxiang",
     name: "海福盛",
     nameEn: "Haifusheng",
-    image: "https://placehold.co/600x400/3498db/white?text=Haifuxiang",
+    image: "https://i.postimg.cc/Gt3QyPTs/fba515ca-f7b7-4fe0-9e59-48bb7d5423c0.jpg",
     description: "冲泡型螺蛳粉专家，方便快捷，适合办公室/旅行。",
     descriptionEn: "Brewed luosifen expert, convenient and fast, perfect for office/travel.",
     price: 39.9,
@@ -103,7 +103,7 @@ const luosifenBrands = [
     id: "zhongliu",
     name: "中柳",
     nameEn: "Zhongliu",
-    image: "https://placehold.co/600x400/27ae60/white?text=Zhongliu",
+    image: "https://i.postimg.cc/yx6PZh3N/dc2fddf5-e560-49a8-b224-a0324d84b3da.jpg",
     description: "专注出口品质，拥有国际食品安全认证，远销欧美。",
     descriptionEn: "Export-quality focus, international food safety certified, sold in Europe/US.",
     price: 72,
@@ -118,7 +118,7 @@ const luosifenBrands = [
     id: "shiweixian",
     name: "食为先",
     nameEn: "Shiweixian",
-    image: "https://placehold.co/600x400/e74c3c/white?text=Shiweixian",
+    image: "https://i.postimg.cc/1trBX7XX/0d9d6859-c605-4ef0-8d69-b6735157df38.jpg",
     description: "性价比之王，日产能超50万包，主打大众市场。",
     descriptionEn: "Best value, daily production capacity exceeds 500,000 packs.",
     price: 45,
@@ -133,7 +133,7 @@ const luosifenBrands = [
     id: "zhuangxiang",
     name: "壮乡",
     nameEn: "Zhuangxiang",
-    image: "https://placehold.co/600x400/9b59b6/white?text=Zhuangxiang",
+    image: "https://i.postimg.cc/PJf4wbvx/e081cfeb-7e99-44fe-a22f-ae3affb0653d.jpg",
     description: "民族特色品牌，融入壮族文化元素，特色酸笋风味。",
     descriptionEn: "Ethnic brand with Zhuang cultural elements, distinctive flavor.",
     price: 62,
@@ -160,24 +160,21 @@ function LuosifenPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("default");
-  const [gridColumns, setGridColumns] = useState(2);
+  const [gridColumns, setGridColumns] = useState(2); // 2 = two columns, 1 = one column
   const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
     const savedGrid = localStorage.getItem("luosifen_grid_layout");
     if (savedGrid) {
-      const savedValue = parseInt(savedGrid);
-      if (savedValue === 1 || savedValue === 2) {
-        setGridColumns(savedValue);
-      }
+      setGridColumns(parseInt(savedGrid));
     }
   }, []);
 
   const toggleLanguage = () => setLanguage(language === "中文" ? "EN" : "中文");
   
+  // CORRECTED TOGGLE LOGIC - Same as community page
   const toggleGridLayout = () => {
     const newLayout = gridColumns === 2 ? 1 : 2;
-    console.log("Toggling grid from", gridColumns, "to", newLayout); // Debug log
     setGridColumns(newLayout);
     localStorage.setItem("luosifen_grid_layout", newLayout.toString());
   };
@@ -251,15 +248,15 @@ function LuosifenPage() {
               <option value="price">{t("价格最低", "Price Low")}</option>
               <option value="reviews">{t("最受欢迎", "Popular")}</option>
             </select>
-            {/* FIXED TOGGLE BUTTON - Bilingual */}
+            {/* CORRECTED TOGGLE BUTTON LOGIC */}
             <button 
               onClick={toggleGridLayout} 
               className="px-4 py-2 rounded-full border bg-white text-sm hover:bg-gray-50 transition"
             >
               {gridColumns === 2 ? (
-                <>{t("⊞ 一列", "⊞ 1 Col")}</>
+                <>{t("一列", "1 Col")}</>
               ) : (
-                <>{t("📋 两列", "📋 2 Cols")}</>
+                <>{t("两列", "2 Cols")}</>
               )}
             </button>
           </div>
@@ -289,8 +286,8 @@ function LuosifenPage() {
           {t("找到", "Found")} {filteredBrands.length} {t("个品牌", "brands")}
         </div>
 
-        {/* Brands Grid */}
-        <div className={`grid gap-5 ${gridColumns === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
+        {/* CORRECTED GRID - Same as community page */}
+        <div className={`grid gap-5 ${gridColumns === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
           {filteredBrands.map((brand) => (
             <Link key={brand.id} href={`/luosifen/${brand.id}`}>
               <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer">
