@@ -7,7 +7,7 @@ import BottomNav from "@/components/BottomNav";
 import Logo from "@/components/Logo";
 import AIChatbot from "@/components/AIChatbot";
 
-// Secret Spots Data - 8 Hidden Gems in Liuzhou
+// Secret Spots Data - 8 Hidden Gems in Liuzhou with HIGH-RES IMAGES
 const secretSpots = [
   {
     id: "firewood-kitchen",
@@ -15,7 +15,7 @@ const secretSpots = [
     nameZh: "阿公柴火厨房",
     category: "food",
     categoryZh: "美食秘境",
-    image: "https://i.postimg.cc/4KSFnG9y/0b85781d-8938-4d43-977b-a076ed5aa75d.jpg",
+    image: "https://i.postimg.cc/gJz9SkcV/0b85781d-8938-4d43-977b-a076ed5aa75d.jpg",
     description: "An off-road village kitchen run by an old couple. Firewood stacked high, chickens running free, and a friendly Labrador welcoming guests.",
     descriptionZh: "一个由老夫妻经营的村舍厨房。高高的柴火堆，自由奔跑的鸡鸭，还有一只友善的拉布拉多犬迎接客人。",
     difficulty: "Easy",
@@ -35,7 +35,7 @@ const secretSpots = [
     nameZh: "秘密阳台",
     category: "food",
     categoryZh: "美食秘境",
-    image: "https://i.postimg.cc/30MSCZ9x/263672a9-42e4-462b-9a16-5a8941f2cc41.jpg",
+    image: "https://i.postimg.cc/tJJKbSxW/263672a9-42e4-462b-9a16-5a8941f2cc41.jpg",
     description: "An unmarked 11th-floor apartment where a family serves home-cooked meals overlooking the Liujiang River. Reservation only.",
     descriptionZh: "一个位于11楼的隐秘公寓，一家人在这里提供俯瞰柳江的家常菜。仅限预约。",
     difficulty: "Easy",
@@ -55,7 +55,7 @@ const secretSpots = [
     nameZh: "隐秘点心庭院",
     category: "food",
     categoryZh: "美食秘境",
-    image: "https://i.postimg.cc/KKHs4bMR/1e6e3e74-93a4-4606-b277-1ae756f784d6.jpg",
+    image: "https://i.postimg.cc/3R8MSJrC/1e6e3e74-93a4-4606-b277-1ae756f784d6.jpg",
     description: "A courtyard dim sum restaurant tucked inside Longtan Park. Always packed with locals. Handmade dim sum served fresh.",
     descriptionZh: "隐藏在龙潭公园内的庭院点心餐厅。总是坐满本地人。新鲜手工制作的点心。",
     difficulty: "Easy",
@@ -75,7 +75,7 @@ const secretSpots = [
     nameZh: "柳州小阿勒泰",
     category: "nature",
     categoryZh: "自然秘境",
-    image: "https://i.postimg.cc/m1xXNSVr/1788282c-c596-4d0e-8497-02b4e9f5af61.jpg",
+    image: "https://i.postimg.cc/gjjCpSZ3/1788282c-c596-4d0e-8497-02b4e9f5af61.jpg",
     description: "A valley grassland with grazing cattle, a solitary tree, and a wooden cabin. Feels like a Windows XP wallpaper come to life.",
     descriptionZh: "一个山谷草原，有放牧的牛群、一棵孤树和一间木屋。感觉像是Windows XP壁纸活了过来。",
     difficulty: "Moderate",
@@ -95,7 +95,7 @@ const secretSpots = [
     nameZh: "响水石林",
     category: "nature",
     categoryZh: "自然秘境",
-    image: "https://i.postimg.cc/SY0T7GdB/0714bbb3-8688-474b-83d3-4f48d80f4865.jpg",
+    image: "https://i.postimg.cc/QCC2D4Td/0714bbb3-8688-474b-83d3-4f48d80f4865.jpg",
     description: "A billion-year-old stone forest of black iron-ore rocks. Looks like an alien landscape. Free entry.",
     descriptionZh: "亿万年形成的黑色铁矿石林。看起来像外星景观。免费进入。",
     difficulty: "Easy",
@@ -115,7 +115,7 @@ const secretSpots = [
     nameZh: "回龙山日落",
     category: "photo",
     categoryZh: "摄影秘境",
-    image: "https://i.postimg.cc/q6fbXGwY/511ab6c0-7a22-4f67-89c9-9abd75a9e4f8.jpg",
+    image: "https://i.postimg.cc/Bbbr3YKq/511ab6c0-7a22-4f67-89c9-9abd75a9e4f8.jpg",
     description: "The best sunset view overlooking Yaobu Ancient Town and the Liujiang River. A quiet park away from crowds.",
     descriptionZh: "俯瞰窑埠古镇和柳江的最佳日落景观。远离人群的宁静公园。",
     difficulty: "Easy",
@@ -135,7 +135,7 @@ const secretSpots = [
     nameZh: "白莲洞洞穴博物馆",
     category: "cultural",
     categoryZh: "文化秘境",
-    image: "https://i.postimg.cc/1VxCcKMm/154936f1-68c5-4f4a-af1d-ef49a36c87ac.jpg",
+    image: "https://i.postimg.cc/yxxMKQZZ/154936f1-68c5-4f4a-af1d-ef49a36c87ac.jpg",
     description: "A science museum inside a real cave! Features life-sized dinosaur models amidst the karst mountains.",
     descriptionZh: "一个建在真正洞穴内的科学博物馆！在喀斯特山脉中设有真人大小的恐龙模型。",
     difficulty: "Easy",
@@ -155,7 +155,7 @@ const secretSpots = [
     nameZh: "香桥喀斯特地质公园",
     category: "nature",
     categoryZh: "自然秘境",
-    image: "https://i.postimg.cc/3WpbrPJy/e1186e09-dfd2-461d-8969-6792035b34a3.jpg",
+    image: "https://i.postimg.cc/sf0FmrkJ/e1186e09-dfd2-461d-8969-6792035b34a3.jpg",
     description: "A massive natural limestone bridge over emerald water. Contains the secret Jiulong Cave that opens only 4 times daily.",
     descriptionZh: "一座巨大的天然石灰岩桥横跨碧绿的水面。内有每天仅开放4次的九龙洞秘境。",
     difficulty: "Moderate",
@@ -187,6 +187,7 @@ function SecretSpotsPage() {
   const [sortBy, setSortBy] = useState("default");
   const [gridColumns, setGridColumns] = useState(2);
   const [showFilters, setShowFilters] = useState(false);
+  const [imageErrors, setImageErrors] = useState({});
 
   useEffect(() => {
     const savedGrid = localStorage.getItem("secret_spots_grid_layout");
@@ -217,6 +218,10 @@ function SecretSpotsPage() {
 
   const handleSpotClick = () => {
     sessionStorage.setItem("secret_spots_scroll_position", window.scrollY.toString());
+  };
+
+  const handleImageError = (spotId) => {
+    setImageErrors(prev => ({ ...prev, [spotId]: true }));
   };
 
   let filteredSpots = secretSpots.filter(spot => {
@@ -309,10 +314,21 @@ function SecretSpotsPage() {
           {filteredSpots.map((spot) => (
             <Link key={spot.id} href={`/tour/secret/${spot.id}`} onClick={handleSpotClick}>
               <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={spot.image} alt={language === "中文" ? spot.nameZh : spot.name} className="w-full h-full object-cover" />
+                <div className="relative h-48 overflow-hidden bg-gray-200">
+                  {!imageErrors[spot.id] ? (
+                    <img 
+                      src={spot.image} 
+                      alt={language === "中文" ? spot.nameZh : spot.name} 
+                      className="w-full h-full object-cover"
+                      onError={() => handleImageError(spot.id)}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-4xl bg-gradient-to-r from-emerald-100 to-teal-100">
+                      🔮
+                    </div>
+                  )}
                   <div className="absolute top-2 right-2 bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded-full">
-                    {spot.categoryZh ? spot.categoryZh : spot.category}
+                    {t(spot.categoryZh, spot.category)}
                   </div>
                 </div>
                 <div className="p-4">
