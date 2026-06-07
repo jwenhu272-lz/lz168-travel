@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
-import { Noto_Sans_SC } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 
-const notoSansSC = Noto_Sans_SC({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
+// Removed Google Fonts - using system fonts instead for China accessibility
 
 export const metadata: Metadata = {
   title: 'Lz168.com | 秀美柳州 · 市井青云',
@@ -20,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className={notoSansSC.className}>
+      <body>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

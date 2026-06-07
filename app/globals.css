@@ -2,41 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Trip.com Style - Correct Blue (#0052CC) */
+/* China-friendly font stack - no external requests, instant loading */
 :root {
-  --primary: #0052cc;
-  --primary-dark: #0044aa;
-  --primary-light: #1a6bff;
-  --secondary: #f5a623;
-  --accent: #00a86b;
-  --gray-bg: #f7f7f7;
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Noto Sans CJK SC', 'Helvetica Neue', sans-serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Noto Sans CJK SC', 'Helvetica Neue', sans-serif;
 }
 
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body styles with China-friendly fonts */
 body {
-  background-color: #f7f7f7 !important;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1f2937;
+  background-color: #f3f4f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Force correct blue */
-.bg-trip-primary {
-  background-color: #0052cc !important;
-}
-.bg-trip-primary:hover {
-  background-color: #0044aa !important;
-}
-
-.text-trip-primary {
-  color: #0052cc !important;
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-.border-trip-primary {
-  border-color: #0052cc !important;
+/* Custom scrollbar (optional, looks nice) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.bg-trip-promo {
-  background: linear-gradient(135deg, #0052cc 0%, #1a6bff 100%) !important;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
 }
-/* Toast Animation for Food Page */
-@keyframes fadeInOut {
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Line clamp utility for text truncation */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animation utilities */
+@keyframes fade-in-out {
   0% {
     opacity: 0;
     transform: translateY(-10px);
@@ -56,14 +97,22 @@ body {
 }
 
 .animate-fade-in-out {
-  animation: fadeInOut 2s ease-in-out forwards;
+  animation: fade-in-out 2s ease-in-out forwards;
 }
 
-/* Hide scrollbar for categories on mobile */
-.scrollbar-hide::-webkit-scrollbar {
+/* Hide scrollbar for mobile but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-.scrollbar-hide {
+
+.no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Tailwind custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
