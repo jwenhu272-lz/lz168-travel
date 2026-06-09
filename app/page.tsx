@@ -21,17 +21,18 @@ export default function Home() {
     { id: 5, image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Carousel/carousel-5-secretspots2.jpeg", title: "🌾 柳州小阿勒泰", titleEn: "🌾 Liuzhou's Little Altay", subtitle: "山谷草原 · 孤树木屋 · 拍照圣地", subtitleEn: "Valley Grassland · A Photography Paradise", cta: "探索秘境 →", ctaEn: "Discover Secret →", link: "/tour/secret/little-altay" },
   ];
 
-  // Community Posts - UPDATED with new image links
+  // IMPORTANT: Community Posts - MUST match the order in app/community/page.tsx
+  // Order: 1.螺蛳粉, 2.旅游, 3.酒店, 4.摄影, 5.夜市, 6.官方, 7.自驾, 8.早茶, 9.樱花, 10.樱花摄影
   const communityPosts = [
-    { id: 1, username: "青云商户管家", usernameEn: "Qingyun Merchant", avatar: "🏨", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Boutique%20hotel%20room/community-post1-boutique-hotel-room-1.jpeg", title: "青云精品酒店限时特惠！", titleEn: "Hotel Limited Offer!", likes: 567, comments: 34, saves: 123 },
-    { id: 2, username: "美食探店小分队", usernameEn: "Food Explorer Team", avatar: "🍲", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Dim%20sum%20morning%20tea/community-post2-dimsum-morning-tea-1.jpeg", title: "青云早茶文化体验", titleEn: "Morning Tea Experience", likes: 2341, comments: 167, saves: 543 },
-    { id: 3, username: "柳州美食家", usernameEn: "Liuzhou Foodie", avatar: "🍜", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Luosifen%20food%20review/community-post3-luosifen-food-review-1.jpeg", title: "青云螺蛳粉探店！正宗柳州味", titleEn: "Qingyun Luosifen Review!", likes: 1289, comments: 89, saves: 345 },
-    { id: 4, username: "螺蛳粉公主", usernameEn: "Luosifen Princess", avatar: "👸", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Night%20market%20close-up/community-post4-night-market-close-up-1.jpeg", title: "柳州夜市必吃清单🔥", titleEn: "Night Market Must-Eat🔥", likes: 1876, comments: 145, saves: 432 },
-    { id: 5, username: "青云官方", usernameEn: "Qingyun Official", avatar: "🎫", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Night%20market%20scene/community-post4-night-market-scene-1.jpeg", title: "青云景区新活动来啦！", titleEn: "New Events at Qingyun!", likes: 987, comments: 56, saves: 234 },
-    { id: 6, username: "旅游达人小周", usernameEn: "Travel Expert", avatar: "✈️", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Qingyun%20viewpoint/community-post6-qingyun-viewpoint-1.jpeg", title: "青云景区最美打卡点推荐", titleEn: "Best Photo Spots", likes: 2345, comments: 156, saves: 678 },
+    { id: 1, username: "柳州美食家", usernameEn: "Liuzhou Foodie", avatar: "🍜", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Luosifen%20food%20review/community-post3-luosifen-food-review-1.jpeg", title: "青云螺蛳粉探店！正宗柳州味", titleEn: "Qingyun Luosifen Review!", likes: 1289, comments: 89, saves: 345 },
+    { id: 2, username: "旅游达人小周", usernameEn: "Travel Expert", avatar: "✈️", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Qingyun%20viewpoint/community-post6-qingyun-viewpoint-1.jpeg", title: "青云景区最美打卡点推荐", titleEn: "Best Photo Spots", likes: 2345, comments: 156, saves: 678 },
+    { id: 3, username: "青云商户管家", usernameEn: "Qingyun Merchant", avatar: "🏨", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Boutique%20hotel%20room/community-post1-boutique-hotel-room-1.jpeg", title: "青云精品酒店限时特惠！", titleEn: "Hotel Limited Offer!", likes: 567, comments: 34, saves: 123 },
+    { id: 4, username: "柳州摄影狮", usernameEn: "Liuzhou Photographer", avatar: "📷", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Traditional%20architecture/community-post8-traditional-architecture-1.jpeg", title: "青云夜景绝美拍摄攻略", titleEn: "Night Photography Guide", likes: 3421, comments: 278, saves: 901 },
+    { id: 5, username: "螺蛳粉公主", usernameEn: "Luosifen Princess", avatar: "👸", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Night%20market%20close-up/community-post4-night-market-close-up-1.jpeg", title: "柳州夜市必吃清单🔥", titleEn: "Night Market Must-Eat🔥", likes: 1876, comments: 145, saves: 432 },
+    { id: 6, username: "青云官方", usernameEn: "Qingyun Official", avatar: "🎫", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Night%20market%20scene/community-post4-night-market-scene-1.jpeg", title: "青云景区新活动来啦！", titleEn: "New Events at Qingyun!", likes: 987, comments: 56, saves: 234 },
     { id: 7, username: "自驾游阿强", usernameEn: "Road Trip A Qiang", avatar: "🚗", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Scenic%20mountain%20road/community-post7-scenic-mountain-road-1.jpeg", title: "柳州周边自驾游路线推荐", titleEn: "Road Trip Routes", likes: 654, comments: 43, saves: 187 },
-    { id: 8, username: "柳州摄影狮", usernameEn: "Liuzhou Photographer", avatar: "📷", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Traditional%20architecture/community-post8-traditional-architecture-1.jpeg", title: "青云夜景绝美拍摄攻略", titleEn: "Night Photography Guide", likes: 3421, comments: 278, saves: 901 },
-    { id: 9, username: "柳州文旅", usernameEn: "Liuzhou Culture & Tourism", avatar: "🌸", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/_0808511a-cfbc-4517-92f5-b72bd891dc6c.jpeg", title: "🌸 柳州樱花季 · 春日限定浪漫", titleEn: "🌸 Liuzhou Sakura Season · Spring Limited Romance", likes: 3421, comments: 278, saves: 901 },
+    { id: 8, username: "美食探店小分队", usernameEn: "Food Explorer Team", avatar: "🍲", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Dim%20sum%20morning%20tea/community-post2-dimsum-morning-tea-1.jpeg", title: "青云早茶文化体验", titleEn: "Morning Tea Experience", likes: 2341, comments: 167, saves: 543 },
+    { id: 9, username: "柳州文旅", usernameEn: "Liuzhou Culture & Tourism", avatar: "🌸", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/_0808511a-cfbc-4517-92f5-b72bd891dc6c.jpeg", title: "🌸 柳州樱花季 · 春日限定浪漫", titleEn: "🌸 Liuzhou Sakura Season", likes: 3421, comments: 278, saves: 901 },
     { id: 10, username: "摄影小王子", usernameEn: "Photography Prince", avatar: "📸", image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/_133e5bd7-eb4e-4890-bb02-8cb90bce7869.jpeg", title: "樱花拍照秘籍｜柳州樱花季必看", titleEn: "Sakura Photography Secrets", likes: 2856, comments: 189, saves: 567 },
   ];
 
@@ -192,7 +193,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Partners Section - Quick Actions removed */}
+      {/* Partners Section */}
       <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "20px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
           <Link href="/luosifen" style={{ backgroundColor: "white", padding: "16px", borderRadius: "12px", textAlign: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.1)", textDecoration: "none", color: "inherit" }}>

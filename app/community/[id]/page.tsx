@@ -117,10 +117,9 @@ const communityPosts = [
     username: "青云官方",
     avatar: "🎫",
     images: [
-      "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Night%20market%20scene/community-post4-night-market-scene-2.jpeg",
       "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Community/Night%20market%20scene/community-post4-night-market-scene-1.jpeg",
+      "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Hotel/_bf211f3a-b9a4-4123-9940-449109c059ac.jpeg"
     ],
-    title: "青云景区新活动来啦！",
     description: "青云景区推出秋季特别活动，门票优惠+文化表演，快来参与！",
     location: "青云景区",
     tags: ["官方活动", "青云景区"],
