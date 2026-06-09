@@ -16,18 +16,19 @@ export default function AIChatbot({ language }) {
   const [hasInteracted, setHasInteracted] = useState(false);
   const recognitionRef = useRef(null);
 
+  // UPDATED AVATAR IMAGES
   const avatars = {
     male: {
       name: "特朗普老师",
       nameEn: "Teacher Trump",
-      image: "https://i.imgur.com/SwknXjI.png",
+      image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/ChatRobot/Trump-Chatbot.PNG",
       greeting: "哈哈！让特朗普老师帮你安排行程！保证让你玩得开心！🇺🇸",
       greetingEn: "Haha! Let Teacher Trump help you plan your trip! Guaranteed fun! 🇺🇸",
     },
     female: {
       name: "小丽同学",
       nameEn: "Xiao Li",
-      image: "https://i.imgur.com/X0KoBua.png",
+      image: "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/ChatRobot/Sally-Chatbot.PNG",
       greeting: "你好呀！我是小丽，很高兴为你服务～🌸",
       greetingEn: "Hello! I'm Xiao Li, happy to serve you~ 🌸",
     },
@@ -64,7 +65,6 @@ export default function AIChatbot({ language }) {
     utterance.onend = () => setIsSpeaking(false);
     utterance.onerror = () => setIsSpeaking(false);
     
-    // Add a small delay to ensure proper playback
     setTimeout(() => {
       window.speechSynthesis.speak(utterance);
     }, 100);
@@ -79,7 +79,6 @@ export default function AIChatbot({ language }) {
       return;
     }
     
-    // Stop any existing recognition
     if (recognitionRef.current) {
       try {
         recognitionRef.current.abort();
@@ -102,7 +101,6 @@ export default function AIChatbot({ language }) {
       const transcript = result[0].transcript;
       setInputValue(transcript);
       
-      // If this is a final result, auto-send
       if (result.isFinal) {
         setIsListening(false);
         setTimeout(() => {
@@ -358,7 +356,7 @@ export default function AIChatbot({ language }) {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Quick Action Buttons - 2 rows of 2 buttons (compact) */}
+      {/* Quick Action Buttons */}
       <div className="p-2 border-t bg-white">
         <div className="grid grid-cols-2 gap-2">
           {quickActions.map((action) => (

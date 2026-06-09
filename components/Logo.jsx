@@ -5,8 +5,8 @@ export default function Logo() {
   return (
     <Link href="/" className="flex items-center">
       <img 
-        src="https://i.postimg.cc/Gpdh7wrS/Photoroom-20260530-010622.png" 
-        alt="Lz168.com" 
+        src="https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/logo.PNG" 
+        alt="Lz108.com" 
         style={{ 
           height: "110px", 
           width: "auto", 
