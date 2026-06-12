@@ -12,7 +12,17 @@ import AIChatbot from "@/components/AIChatbot";
 const brandData = {
   luobawang: {
     name: "螺霸王", nameEn: "Luobawang",
-    images: ["https://i.postimg.cc/jSGQqYsM/fb3d8be6-9c78-46fb-9560-48a65afd141a.jpg", "https://i.postimg.cc/7YC5HBKN/2d447cdb-2bbb-45de-86a4-e3b06540b681.jpg", "https://i.postimg.cc/fRmkXVnz/294f8c66-5d39-4a49-840b-f573552da73e.jpg", "https://i.postimg.cc/K8B4L1Sh/281f7653-efb5-4128-bb5c-f6169c8f3cc5.jpg", "https://i.postimg.cc/WbDdN95d/0bdf4a1d-3c5d-4383-b520-4e8e67062926.jpg"],
+    images: ["https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/brand1-1.jpeg", 
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/brand1-2.jpeg", 
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/brand1-4.jpeg", 
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/brand1-8.jpeg", 
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/bowl10.jpeg",
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/bowl7.jpeg",
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/eldely-woman2.jpeg",
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/factory10.jpeg",
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/gallery1.jpeg",
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/kid1.jpeg",
+    "https://lz108-images-1441146884.cos.ap-hongkong.myqcloud.com/Luoshifen/warehouse1.jpeg"],
     description: "柳州螺蛳粉龙头企业，拥有现代化工厂和博物馆。畅销全球30多个国家。",
     descriptionEn: "Leading Liuzhou Luosifen enterprise with modern factory and museum.",
     history: "成立于2012年，总部位于柳州鱼峰区。2016年建成全自动化生产线，2020年建成螺蛳粉博物馆。",
